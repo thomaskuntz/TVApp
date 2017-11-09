@@ -1,0 +1,12 @@
+C:\Users\cvalla\Desktop\CardFlips\Desktop-App\AceCards
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=AceCards
+--content-root=C:\Users\cvalla\Desktop\CardFlips\Desktop-App\AceCards
+--file=C:\Users\cvalla\Desktop\CardFlips\Desktop-App\AceCards\Views\Home\About.cshtml
+--file=C:\Users\cvalla\Desktop\CardFlips\Desktop-App\AceCards\Views\Home\Contact.cshtml
+--file=C:\Users\cvalla\Desktop\CardFlips\Desktop-App\AceCards\Views\Home\Index.cshtml
+--file=C:\Users\cvalla\Desktop\CardFlips\Desktop-App\AceCards\Views\Shared\Error.cshtml
+--file=C:\Users\cvalla\Desktop\CardFlips\Desktop-App\AceCards\Views\Shared\_Layout.cshtml
+--file=C:\Users\cvalla\Desktop\CardFlips\Desktop-App\AceCards\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=C:\Users\cvalla\Desktop\CardFlips\Desktop-App\AceCards\Views\_ViewImports.cshtml
+--file=C:\Users\cvalla\Desktop\CardFlips\Desktop-App\AceCards\Views\_ViewStart.cshtml

@@ -64,15 +64,17 @@
 //
 
 .card-header {
-  padding: $card-spacer-y $card-spacer-x;
-  margin-bottom: 0; // Removes the default margin-bottom of <hN>
-  background-color: $card-cap-bg;
-  border-bottom: $card-border-width solid $card-border-color;
+    padding: $card-spacer-y $card-spacer-x;
+    margin-bottom: 0; // Removes the default margin-bottom of <hN>
+    background-color: $card-cap-bg;
+    border-bottom: $card-border-width solid $card-border-color;
+    text-align: center;
+    font-weight: bold;
+    //
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
 
-  &:first-child {
-    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
-  }
 }
+
 
 .card-footer {
   padding: $card-spacer-y $card-spacer-x;
