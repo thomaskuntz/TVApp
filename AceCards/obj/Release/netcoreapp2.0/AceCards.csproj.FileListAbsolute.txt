@@ -1,0 +1,11 @@
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\bin\Release\netcoreapp2.0\AceCards.deps.json
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\bin\Release\netcoreapp2.0\AceCards.runtimeconfig.json
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\bin\Release\netcoreapp2.0\AceCards.runtimeconfig.dev.json
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\bin\Release\netcoreapp2.0\AceCards.dll
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\bin\Release\netcoreapp2.0\AceCards.pdb
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\obj\Release\netcoreapp2.0\AceCards.csprojResolveAssemblyReference.cache
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\obj\Release\netcoreapp2.0\AceCards.csproj.CoreCompileInputs.cache
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\obj\Release\netcoreapp2.0\AceCards.AssemblyInfoInputs.cache
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\obj\Release\netcoreapp2.0\AceCards.AssemblyInfo.cs
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\obj\Release\netcoreapp2.0\AceCards.dll
+C:\Users\cvalla\Desktop\Desktop-App-master\AceCards\obj\Release\netcoreapp2.0\AceCards.pdb

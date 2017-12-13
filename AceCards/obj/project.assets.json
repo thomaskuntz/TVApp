@@ -12567,6 +12567,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.0",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "popper.js >= 1.12.6"
     ]
@@ -12581,11 +12582,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "c:\\users\\cvalla\\Source\\repos\\AceCards\\AceCards\\AceCards.csproj",
+      "projectUniqueName": "C:\\Users\\cvalla\\Desktop\\Desktop-App-master\\AceCards\\AceCards.csproj",
       "projectName": "AceCards",
-      "projectPath": "c:\\users\\cvalla\\Source\\repos\\AceCards\\AceCards\\AceCards.csproj",
+      "projectPath": "C:\\Users\\cvalla\\Desktop\\Desktop-App-master\\AceCards\\AceCards.csproj",
       "packagesPath": "C:\\Users\\cvalla\\.nuget\\packages\\",
-      "outputPath": "c:\\users\\cvalla\\Source\\repos\\AceCards\\AceCards\\obj\\",
+      "outputPath": "C:\\Users\\cvalla\\Desktop\\Desktop-App-master\\AceCards\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12619,6 +12620,10 @@
             "target": "Package",
             "version": "2.0.0",
             "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "2.0.0"
           },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
