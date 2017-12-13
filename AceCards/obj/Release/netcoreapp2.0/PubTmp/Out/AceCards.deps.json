@@ -24,6 +24,7 @@
       "AceCards/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
           "popper.js": "1.12.6"
         },

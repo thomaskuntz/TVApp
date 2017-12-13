@@ -1,145 +1,140 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<script src="~/js/app.js"></script>
 
-<style>
-    .gauge {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+<body ng-app="app">
+    <div class="container-fluid" ng-controller="DataCtrl">
+        <div ng-model="data">
+            <!--START CARD ROW1-->
+            <div class="card-deck">
+                <!--CARD1 Budget-->
+                <div class="card" id="budget">
+                    <div class="card-header badge-danger">
+                        Budget
+                    </div>
+                    <div class="card-block">
+                        <div>
+                            <canvas id="canvas-preview"></canvas>
+                            <div id="minVal">{{data.Budget_Status.Current}}</div>
 
-    #canvas-preview {
-        background-color: transparent;
-    }
-
-    #minVal {
-        display: none;
-        position: fixed;
-        left: 18%;
-        color: white;
-    }
-
-    #maxVal, #preview-textfield {
-        display: none;
-    }
-</style>
-
-
-<body ng-app="OnlineStatus">
-    <div class="container-fluid">
-        <div class="card-deck">
-        <div class="card">
-            <div class="card-header badge-danger">
-                Budget
-            </div>
-            <div class="card-block">
-                <h4 class="card-title">Special title treatment</h4>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <div>
-                    <canvas id="canvas-preview"></canvas>
-                    <div id="minVal">0</div>
-                    <div id="maxVal">300</div>
-                    <div id="preview-textfield">0%</div>
+                            <div id="maxVal">{{data.Budget_Status.Goal}}</div>
+                        </div>
+                        <div>
+                            <h5 class="card-text">Current: {{data.Budget_Status.Current}}</h5>
+                            <h5 class="card-text">Goal: {{data.Budget_Status.Goal}}</h5>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header badge-danger">
-                Projects Closed
-            </div>
-            <div class="card-block">
-                <h4 class="card-title">Special title treatment</h4>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <div>
-                    <canvas id="canvas-preview2"></canvas>
-                    <div id="minVal">0</div>
-                    <div id="maxVal">300</div>
-                    <div id="preview-textfield">0%</div>
+                <!--END CARD1 Budget -->
+
+                <!--CARD2 PROJECTS_CLOSED-->
+                <div class="card">
+                    <div class="card-header badge-danger">
+                        Projects Closed
+                    </div>
+                    <div class="card-block">
+                        <h4 class="card-title">Special title treatment</h4>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <div>
+                            <canvas id="canvas-preview2"></canvas>
+                            <div id="minVal2">{{data.Projects_Status.Current}}</div>
+                            <div id="maxVal2">{{data.Projects_Status.Goal}}</div>
+                            <div id="preview-textfield">0%</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header badge-danger">
-                Efficiency-Hours Saved
-            </div>
-            <div class="card-block">
-                <h4 class="card-title">Special title treatment</h4>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <div>
-                    <canvas id="canvas-preview3"></canvas>
-                    <div id="minVal">0</div>
-                    <div id="maxVal">300</div>
-                    <div id="preview-textfield">0%</div>
-                </div>
-            </div>
-        </div>
-            </div>
-        <div class="card-deck mt-3">
-            <div class="card">
-                <div class="card-header badge-danger">
-                    Outage Hours
-                </div>
-                <div class="card-block">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <div>
-                        <canvas id="canvas-preview4"></canvas>
-                        <div id="minVal">0</div>
-                        <div id="maxVal">300</div>
-                        <div id="preview-textfield">0%</div>
+                <!--END CARD2 PROJECTS CLOSED-->
+
+                <!--CARD3 EFFICIENCY_HOURS_SAVED-->
+                <div class="card">
+                    <div class="card-header badge-danger">
+                        Efficiency-Hours Saved
+                    </div>
+                    <div class="card-block">
+                        <h4 class="card-title">Special title treatment</h4>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <div>
+                            <canvas id="canvas-preview3"></canvas>
+                            <div id="minVal3">{{data.Efficiency_Status.Current}}</div>
+                            <div id="maxVal3">{{data.Efficiency_Status.Goal}}</div>
+                            <div id="preview-textfield">0%</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header badge-danger">
-                    Defect Reduction
-                </div>
-                <div class="card-block">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <div>
-                        <canvas id="canvas-preview5"></canvas>
-                        <div id="minVal">0</div>
-                        <div id="maxVal">300</div>
-                        <div id="preview-textfield">0%</div>
+            <!--END CARD3 EFFICIENCY_HOURS_SAVED-->
+            <!--END CARD1 ROW-->
+            <!--START CARD ROW2-->
+            <div class="card-deck mt-3">
+                <!--CARD4 OUTAGE_HOURS-->
+                <div class="card">
+                    <div class="card-header badge-danger">
+                        Outage Hours
+                    </div>
+                    <div class="card-block">
+                        <h4 class="card-title">Special title treatment</h4>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <div>
+                            <canvas id="canvas-preview4"></canvas>
+                            <div id="minVal4">{{data.Outage_Status.Current}}</div>
+                            <div id="maxVal4">{{data.Outage_Status.Goal}}</div>
+                            <div id="preview-textfield">0%</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-header badge-danger">
-                    Chicago Sports Wins
-                </div>
-                <div class="card-block">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <div>
-                        <canvas id="canvas-preview6"></canvas>
-                        <div id="minVal">0</div>
-                        <div id="maxVal">300</div>
-                        <div id="preview-textfield">0%</div>
+                <!--END CARD4 OUTAGE_HOURS-->
+
+                <!--CARD5 DEFECT_REDUCTION-->
+                <div class="card">
+                    <div class="card-header badge-danger">
+                        Defect Reduction
+                    </div>
+                    <div class="card-block">
+                        <h4 class="card-title">Special title treatment</h4>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <div>
+                            <canvas id="canvas-preview5"></canvas>
+                            <div id="minVal5">{{data.Defect_Status.Current}}</div>
+                            <div id="maxVal5">{{data.Defect_Status.Goal}}</div>
+                            <div id="preview-textfield">0%</div>
+                        </div>
                     </div>
                 </div>
+                <!--END CARD5 DEFECT_REDUCTION-->
+                <!--CARD6 CHICAGO_SPORTS_WINS-->
+                <div class="card">
+                    <div class="card-header badge-danger">
+                        Chicago Sports Wins
+                    </div>
+                    <div class="card-block">
+                        <h4 class="card-title">Special title treatment</h4>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <div>
+                            <canvas id="canvas-preview6"></canvas>
+                            <div id="minVal6">{{data.ChicagoSports_Status.Current}}</div>
+                            <div id="maxVal6">{{data.ChicagoSports_Status.Goal}}</div>
+                            <div id="preview-textfield">0%</div>
+                        </div>
+                    </div>
+                </div>
+                <!--END CARD6 CHICAGO_SPORTS_WINS-->
             </div>
+            <!--END CARD ROW2-->
         </div>
-
-    </div>
-    <!--Deck div-->
-    <!--Container div-->
-
-    <div ng-show="online">
-        <i class="fa fa-check-circle" style="color:green"></i>
-        <span>Online</span>
-        <span class="sr-only">Loading...</span>
-    </div>
-    <div ng-show="!online">
-        <i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i>
-        <span>Offline</span>
     </div>
 
-  </body>
+    <!--Section for setting online status-->
+    <!--If the user is connected to the internet we will show that the application is online -->
+    <!--Else show that it is offline-->
+    <div>
+        <div ng-show="online">
+            <i class="fa fa-check-circle" style="color:green"></i>
+            <span>Online</span>
+        </div>
+        <div ng-show="!online">
+            <i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i>
+            <span>Offline</span>
+        </div>
+    </div>
+</body>
 
-@*<script src='https://bernii.github.io/gauge.js/dist/gauge.min.js'></script>*@
-<script src="js/index.js"></script>
