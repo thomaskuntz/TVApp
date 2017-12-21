@@ -24,14 +24,15 @@ setInterval(function () {
         highDpiSupport: true,     // High resolution support
 
         staticZones: [
-            { strokeStyle: "#F03E3E", min: 0, max: 333333.5 }, // Red
-            { strokeStyle: "#FFDD00", min: 333333.5, max: 666666.5 }, // Yellow
-            { strokeStyle: "#30B32D", min: 666666.5, max: 1000000 }  // Green
+            { strokeStyle: "#F03E3E", min: 0, max: 222222 }, // Red
+            { strokeStyle: "#FFA500", min: 222222, max: 444444 }, // Orange
+            { strokeStyle: "#FFDD00", min: 444444, max: 666666 }, // Yellow
+            { strokeStyle: "#30B32D", min: 666666, max: 888888 }  // Green
         ],
 
         staticLabels: {
             font: "15px sans-serif",  // Specifies font
-            labels: [0, 333333.5, 666666.5, 1000000],  // Print labels at these values
+            labels: [0, 222222, 444444, 666666, 888888],  // Print labels at these values
             color: "#000000",  // Optional: Label text color
             fractionDigits: 0  // Optional: Numerical precision. 0=round off.
         }
@@ -41,7 +42,7 @@ setInterval(function () {
     var target = document.getElementById('canvas-preview'); // your canvas element
     var gauge = new Gauge(target).setOptions(budgetCardSettings); // create gauge!
 
-    gauge.maxValue = document.getElementById('maxVal').textContent; // set max gauge value --- HERE WE RETRIEVE THE GOAL VALUE
+    gauge.maxValue = 888888; // set max gauge value
     gauge.setMinValue(0); /// default set to 0.
     gauge.animationSpeed = 1; // set animation speed (32 is default value)
     gauge.set(parseInt(current)); // set the value
@@ -153,15 +154,15 @@ setInterval(function () {
         highDpiSupport: true,     // High resolution support
 
         staticZones: [
-            { strokeStyle: "#F03E3E", min: 0, max: 33 }, // Red
-            { strokeStyle: "#FFA500", min: 33, max: 50 }, // Orange
-            { strokeStyle: "#FFDD00", min: 33.5, max: 66.5 }, // Yellow
-            { strokeStyle: "#30B32D", min: 66.5, max: 100 }  // Green
+            { strokeStyle: "#F03E3E", min: 0, max: 7 }, // Red
+            { strokeStyle: "#FFA500", min: 7, max: 15 }, // Orange
+            { strokeStyle: "#FFDD00", min: 15, max: 22 }, // Yellow
+            { strokeStyle: "#30B32D", min: 22, max: 29 }  // Green
         ],
 
         staticLabels: {
             font: "14px sans-serif",  // Specifies font
-            labels: [0, 33.5, 66.5, 100],  // Print labels at these values
+            labels: [0, 7, 15, 22, 29],  // Print labels at these values
             color: "#000000",  // Optional: Label text color
             fractionDigits: 0  // Optional: Numerical precision. 0=round off.
         }
@@ -169,7 +170,7 @@ setInterval(function () {
     var current = document.getElementById('minVal4').textContent;
     var target = document.getElementById('canvas-preview4'); // your canvas element
     var gauge = new Gauge(target).setOptions(opts); // create gauge!
-    gauge.maxValue = 100; // set max gauge value
+    gauge.maxValue = 29; // set max gauge value
     gauge.animationSpeed = 1; // set animation speed (32 is default value)
     gauge.set(parseInt(current));
     gauge.setTextField(document.getElementById("preview-textfield"));
