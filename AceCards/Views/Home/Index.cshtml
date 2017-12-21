@@ -38,7 +38,7 @@
                             <div id="maxVal2">{{data.Projects_Status.Goal}}</div>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Projects_Status.Current/data.Budget_Status.Goal)| number:0}}%</span></div>
+                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Projects_Status.Current/data.Projects_Status.Goal)| number:0}}%</span></div>
                             <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Projects_Status.Current}}</span></div>
                             <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Projects_Status.Goal}}</span></div>              
                         </div>
