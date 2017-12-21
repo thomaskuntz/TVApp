@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
 <body ng-app="app">
     <div class="container-fluid" ng-controller="DataCtrl">
         <div ng-model="data">
@@ -16,12 +15,12 @@
                         <div>
                             <canvas id="canvas-preview"></canvas>
                             <div id="minVal">{{data.Budget_Status.Current}}</div>
-
                             <div id="maxVal">{{data.Budget_Status.Goal}}</div>
                         </div>
-                        <div>
-                            <h5 class="card-text">Current: {{data.Budget_Status.Current}}</h5>
-                            <h5 class="card-text">Goal: {{data.Budget_Status.Goal}}</h5>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Budget_Status.Current/data.Budget_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Budget_Status.Current | currency:"$":0}}</span></div>
+                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Budget_Status.Goal | currency:"$":0}}</span></div>                        
                         </div>
                     </div>
                 </div>
@@ -33,13 +32,15 @@
                         Projects Closed
                     </div>
                     <div class="card-block">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <div>
                             <canvas id="canvas-preview2"></canvas>
                             <div id="minVal2">{{data.Projects_Status.Current}}</div>
                             <div id="maxVal2">{{data.Projects_Status.Goal}}</div>
-                            <div id="preview-textfield">0%</div>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Projects_Status.Current/data.Budget_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Projects_Status.Current}}</span></div>
+                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Projects_Status.Goal}}</span></div>              
                         </div>
                     </div>
                 </div>
@@ -51,13 +52,16 @@
                         Efficiency-Hours Saved
                     </div>
                     <div class="card-block">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <div>
                             <canvas id="canvas-preview3"></canvas>
                             <div id="minVal3">{{data.Efficiency_Status.Current}}</div>
                             <div id="maxVal3">{{data.Efficiency_Status.Goal}}</div>
                             <div id="preview-textfield">0%</div>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Efficiency_Status.Current/data.Efficiency_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Efficiency_Status.Current}}</span></div>
+                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Efficiency_Status.Goal}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -72,13 +76,16 @@
                         Outage Hours
                     </div>
                     <div class="card-block">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <div>
                             <canvas id="canvas-preview4"></canvas>
                             <div id="minVal4">{{data.Outage_Status.Current}}</div>
                             <div id="maxVal4">{{data.Outage_Status.Goal}}</div>
                             <div id="preview-textfield">0%</div>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Outage_Status.Current/data.Outage_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Outage_Status.Current}}</span></div>
+                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Outage_Status.Goal}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -90,13 +97,16 @@
                         Defect Reduction
                     </div>
                     <div class="card-block">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <div>
                             <canvas id="canvas-preview5"></canvas>
                             <div id="minVal5">{{data.Defect_Status.Current}}</div>
                             <div id="maxVal5">{{data.Defect_Status.Goal}}</div>
                             <div id="preview-textfield">0%</div>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Defect_Status.Current/data.Defect_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Defect_Status.Current}}</span></div>
+                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Defect_Status.Goal}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -107,13 +117,16 @@
                         Chicago Sports Wins
                     </div>
                     <div class="card-block">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <div>
                             <canvas id="canvas-preview6"></canvas>
                             <div id="minVal6">{{data.ChicagoSports_Status.Current}}</div>
                             <div id="maxVal6">{{data.ChicagoSports_Status.Goal}}</div>
                             <div id="preview-textfield">0%</div>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.ChicagoSports_Status.Current/data.ChicagoSports_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.ChicagoSports_Status.Current}}</span></div>
+                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.ChicagoSports_Status.Goal}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -121,12 +134,9 @@
             </div>
             <!--END CARD ROW2-->
         </div>
-    </div>
-
-    <!--Section for setting online status-->
-    <!--If the user is connected to the internet we will show that the application is online -->
-    <!--Else show that it is offline-->
-    <div>
+        <!--Section for setting online status-->
+        <!--If the user is connected to the internet we will show that the application is online -->
+        <!--Else show that it is offline-->
         <div ng-show="online">
             <i class="fa fa-check-circle" style="color:green"></i>
             <span>Online</span>

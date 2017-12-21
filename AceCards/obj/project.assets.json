@@ -12582,11 +12582,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\cvalla\\Desktop\\Desktop-App-master\\AceCards\\AceCards.csproj",
+      "projectUniqueName": "C:\\Users\\cvalla\\Desktop\\G\\Desktop-App\\AceCards\\AceCards.csproj",
       "projectName": "AceCards",
-      "projectPath": "C:\\Users\\cvalla\\Desktop\\Desktop-App-master\\AceCards\\AceCards.csproj",
+      "projectPath": "C:\\Users\\cvalla\\Desktop\\G\\Desktop-App\\AceCards\\AceCards.csproj",
       "packagesPath": "C:\\Users\\cvalla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cvalla\\Desktop\\Desktop-App-master\\AceCards\\obj\\",
+      "outputPath": "C:\\Users\\cvalla\\Desktop\\G\\Desktop-App\\AceCards\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
