@@ -51,7 +51,7 @@ setInterval(function () {
     //*****************************************************************************
     //Projects_Closed Card Settings
     //*****************************************************************************
-    var opts = {
+    var projectsCardSettings = {
         angle: 0, // The span of the gauge arc
         lineWidth: 0.2, // The line thickness
         radiusScale: 1, // Relative radius
@@ -85,7 +85,7 @@ setInterval(function () {
 
     var current = document.getElementById('minVal2').textContent;
     var target = document.getElementById('canvas-preview2'); // your canvas element
-    var gauge = new Gauge(target).setOptions(opts); // create gauge!
+    var gauge = new Gauge(target).setOptions(projectsCardSettings); // create gauge!
     gauge.maxValue = 32; // set max gauge value
     gauge.animationSpeed = 1; // set animation speed (32 is default value)
     gauge.set(parseInt(current));
@@ -94,7 +94,7 @@ setInterval(function () {
     //*****************************************************************************
     // EFFICIENCY_Hours Card Settings
     //*****************************************************************************
-    var opts = {
+    var efficiencyCardSettings = {
         angle: 0, // The span of the gauge arc
         lineWidth: 0.2, // The line thickness
         radiusScale: 1, // Relative radius
@@ -127,7 +127,7 @@ setInterval(function () {
     };
     var current = document.getElementById('minVal3').textContent;
     var target = document.getElementById('canvas-preview3'); // your canvas element
-    var gauge = new Gauge(target).setOptions(opts); // create gauge!
+    var gauge = new Gauge(target).setOptions(efficiencyCardSettings); // create gauge!
     gauge.maxValue = 2080; // set max gauge value
     gauge.animationSpeed = 1; // set animation speed (32 is default value)
     gauge.set(parseInt(current));
@@ -136,7 +136,7 @@ setInterval(function () {
     //*****************************************************************************
     //Outage_Hours Settings
     //*****************************************************************************
-    var opts = {
+    var outageCardSettings = {
         angle: 0, // The span of the gauge arc
         lineWidth: 0.2, // The line thickness
         radiusScale: 1, // Relative radius
@@ -169,7 +169,7 @@ setInterval(function () {
     };
     var current = document.getElementById('minVal4').textContent;
     var target = document.getElementById('canvas-preview4'); // your canvas element
-    var gauge = new Gauge(target).setOptions(opts); // create gauge!
+    var gauge = new Gauge(target).setOptions(outageCardSettings); // create gauge!
     gauge.maxValue = 29; // set max gauge value
     gauge.animationSpeed = 1; // set animation speed (32 is default value)
     gauge.set(parseInt(current));
@@ -178,7 +178,7 @@ setInterval(function () {
     //*****************************************************************************
     //Defect_Reduction Settings
     //*****************************************************************************
-    var opts = {
+    var defectCardSettings = {
         angle: 0, // The span of the gauge arc
         lineWidth: 0.2, // The line thickness
         radiusScale: 1, // Relative radius
@@ -212,7 +212,7 @@ setInterval(function () {
 
     var current = document.getElementById('minVal5').textContent;
     var target = document.getElementById('canvas-preview5'); // your canvas element
-    var gauge = new Gauge(target).setOptions(opts); // create gauge!
+    var gauge = new Gauge(target).setOptions(defectCardSettings); // create gauge!
     gauge.maxValue = document.getElementById('maxVal5').textContent; // set max gauge value
     gauge.animationSpeed = 1; // set animation speed (32 is default value)
     gauge.set(parseInt(current));
@@ -221,7 +221,7 @@ setInterval(function () {
     //*****************************************************************************
     //Chicago_Sports_Wins Card Settings
     //*****************************************************************************
-    var opts = {
+    var chicagoSportsSettings = {
         angle: 0, // The span of the gauge arc
         lineWidth: 0.2, // The line thickness
         radiusScale: 1, // Relative radius
@@ -254,7 +254,7 @@ setInterval(function () {
     };
     var current = document.getElementById('minVal6').textContent;
     var target = document.getElementById('canvas-preview6'); // your canvas element
-    var gauge = new Gauge(target).setOptions(opts); // create gauge!
+    var gauge = new Gauge(target).setOptions(chicagoSportsSettings); // create gauge!
     gauge.maxValue = 52; // set max gauge value
     gauge.animationSpeed = 1; // set animation speed (32 is default value)
     gauge.set(parseInt(current));
