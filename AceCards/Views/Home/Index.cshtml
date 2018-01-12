@@ -1,150 +1,120 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<body ng-app="app">
-    <div class="container-fluid" ng-controller="DataCtrl">
-        <div ng-model="data">
-            <!--START CARD ROW1-->
-            <div class="card-deck">
-                <!--CARD1 Budget-->
-                <div class="card" id="budget">
-                    <div class="card-header badge-danger">
-                        Budget
-                    </div>
-                    <div class="card-block">
-                        <div>
-                            <canvas id="canvas-preview"></canvas>
-                            <div id="minVal">{{data.Budget_Status.Current}}</div>
-                            <div id="maxVal">{{data.Budget_Status.Goal}}</div>
-                        </div>
-                        <div class="card-footer">
-                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Budget_Status.Current/data.Budget_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Budget_Status.Current | currency:"$":0}}</span></div>
-                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Budget_Status.Goal | currency:"$":0}}</span></div>                        
-                        </div>
-                    </div>
+<body ng-app="appRoute">
+    <div class="container-fluid" ng-controller="DataController">
+        <!--START CARD ROW1-->
+        <div class="card-deck">
+            <!--CARD1 Budget-->
+            <div class="card">
+                <div class="card-header badge-danger">
+                    Budget
                 </div>
-                <!--END CARD1 Budget -->
-
-                <!--CARD2 PROJECTS_CLOSED-->
-                <div class="card">
-                    <div class="card-header badge-danger">
-                        Projects Closed
+                <div class="card-block">
+                    <div>
+                        <canvas id="Canvas-Budget"></canvas>
                     </div>
-                    <div class="card-block">
-                        <div>
-                            <canvas id="canvas-preview2"></canvas>
-                            <div id="minVal2">{{data.Projects_Status.Current}}</div>
-                            <div id="maxVal2">{{data.Projects_Status.Goal}}</div>
-                        </div>
-                        <div class="card-footer">
-                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Projects_Status.Current/data.Budget_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Projects_Status.Current}}</span></div>
-                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Projects_Status.Goal}}</span></div>              
-                        </div>
-                    </div>
-                </div>
-                <!--END CARD2 PROJECTS CLOSED-->
-
-                <!--CARD3 EFFICIENCY_HOURS_SAVED-->
-                <div class="card">
-                    <div class="card-header badge-danger">
-                        Efficiency-Hours Saved
-                    </div>
-                    <div class="card-block">
-                        <div>
-                            <canvas id="canvas-preview3"></canvas>
-                            <div id="minVal3">{{data.Efficiency_Status.Current}}</div>
-                            <div id="maxVal3">{{data.Efficiency_Status.Goal}}</div>
-                            <div id="preview-textfield">0%</div>
-                        </div>
-                        <div class="card-footer">
-                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Efficiency_Status.Current/data.Efficiency_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Efficiency_Status.Current}}</span></div>
-                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Efficiency_Status.Goal}}</span></div>
-                        </div>
+                    <div class="card-footer">
+                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.Budget_Status.Current/data.Budget_Status.Goal)| number:0}}%</span></div>
+                        <div>CURRENT: &nbsp;<span class="bold">{{data.Budget_Status.Current | currency:"$":0}}</span></div>
+                        <div>GOAL: &nbsp;<span class="bold">{{data.Budget_Status.Goal | currency:"$":0}}</span></div>
                     </div>
                 </div>
             </div>
+
+            <!--END CARD1 Budget -->
+            <!--CARD2 PROJECTS_CLOSED-->
+            <div class="card">
+                <div class="card-header badge-danger">
+                    Projects Closed
+                </div>
+                <div class="card-block">
+                    <canvas id="Canvas-Projects"></canvas>
+                </div>
+                <div class="card-footer">
+                    <div>STATUS: &nbsp;<span class="bold">{{(100*data.Projects_Status.Current/data.Projects_Status.Goal)| number:0}}%</span></div>
+                    <div>CURRENT: &nbsp;<span class="bold">{{data.Projects_Status.Current}}</span></div>
+                    <div>GOAL: &nbsp;<span class="bold">{{data.Projects_Status.Goal}}</span></div>
+                </div>
+            </div>
+
+            <!--END CARD2 PROJECTS CLOSED-->
+            <!--CARD3 EFFICIENCY_HOURS_SAVED-->
+            <div class="card">
+                <div class="card-header badge-danger">
+                    Efficiency-Hours Saved
+                </div>
+                <div class="card-block">
+                    <div>
+                        <canvas id="Canvas-Efficiency"></canvas>
+                    </div>
+                    <div class="card-footer">
+                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.Efficiency_Status.Current/data.Efficiency_Status.Goal)| number:0}}%</span></div>
+                        <div>CURRENT: &nbsp;<span class="bold">{{data.Efficiency_Status.Current}}</span></div>
+                        <div>GOAL: &nbsp;<span class="bold">{{data.Efficiency_Status.Goal}}</span></div>
+                    </div>
+                </div>
+            </div>
+
             <!--END CARD3 EFFICIENCY_HOURS_SAVED-->
             <!--END CARD1 ROW-->
-            <!--START CARD ROW2-->
-            <div class="card-deck mt-3">
-                <!--CARD4 OUTAGE_HOURS-->
-                <div class="card">
-                    <div class="card-header badge-danger">
-                        Outage Hours
+        </div>
+        <!--START CARD ROW2-->
+        <div class="card-deck mt-3">
+            <!--CARD4 OUTAGE_HOURS-->
+            <div class="card">
+                <div class="card-header badge-danger">
+                    Outage Hours
+                </div>
+                <div class="card-block">
+                    <div>
+                        <canvas id="Canvas-Outage"></canvas>
                     </div>
-                    <div class="card-block">
-                        <div>
-                            <canvas id="canvas-preview4"></canvas>
-                            <div id="minVal4">{{data.Outage_Status.Current}}</div>
-                            <div id="maxVal4">{{data.Outage_Status.Goal}}</div>
-                            <div id="preview-textfield">0%</div>
-                        </div>
-                        <div class="card-footer">
-                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Outage_Status.Current/data.Outage_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Outage_Status.Current}}</span></div>
-                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Outage_Status.Goal}}</span></div>
-                        </div>
+                    <div class="card-footer">
+                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.Outage_Status.Current/data.Outage_Status.Goal)| number:0}}%</span></div>
+                        <div>CURRENT: &nbsp;<span class="bold">{{data.Outage_Status.Current}}</span></div>
+                        <div>GOAL: &nbsp;<span class="bold">{{data.Outage_Status.Goal}}</span></div>
                     </div>
                 </div>
-                <!--END CARD4 OUTAGE_HOURS-->
-
-                <!--CARD5 DEFECT_REDUCTION-->
-                <div class="card">
-                    <div class="card-header badge-danger">
-                        Defect Reduction
-                    </div>
-                    <div class="card-block">
-                        <div>
-                            <canvas id="canvas-preview5"></canvas>
-                            <div id="minVal5">{{data.Defect_Status.Current}}</div>
-                            <div id="maxVal5">{{data.Defect_Status.Goal}}</div>
-                            <div id="preview-textfield">0%</div>
-                        </div>
-                        <div class="card-footer">
-                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.Defect_Status.Current/data.Defect_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.Defect_Status.Current}}</span></div>
-                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.Defect_Status.Goal}}</span></div>
-                        </div>
-                    </div>
-                </div>
-                <!--END CARD5 DEFECT_REDUCTION-->
-                <!--CARD6 CHICAGO_SPORTS_WINS-->
-                <div class="card">
-                    <div class="card-header badge-danger">
-                        Chicago Sports Wins
-                    </div>
-                    <div class="card-block">
-                        <div>
-                            <canvas id="canvas-preview6"></canvas>
-                            <div id="minVal6">{{data.ChicagoSports_Status.Current}}</div>
-                            <div id="maxVal6">{{data.ChicagoSports_Status.Goal}}</div>
-                            <div id="preview-textfield">0%</div>
-                        </div>
-                        <div class="card-footer">
-                            <div>STATUS: &nbsp;<span style="font-weight:bold">{{(100*data.ChicagoSports_Status.Current/data.ChicagoSports_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span style="font-weight:bold">{{data.ChicagoSports_Status.Current}}</span></div>
-                            <div>GOAL: &nbsp;<span style="font-weight:bold">{{data.ChicagoSports_Status.Goal}}</span></div>
-                        </div>
-                    </div>
-                </div>
-                <!--END CARD6 CHICAGO_SPORTS_WINS-->
             </div>
-            <!--END CARD ROW2-->
-        </div>
-        <!--Section for setting online status-->
-        <!--If the user is connected to the internet we will show that the application is online -->
-        <!--Else show that it is offline-->
-        <div ng-show="online">
-            <i class="fa fa-check-circle" style="color:green"></i>
-            <span>Online</span>
-        </div>
-        <div ng-show="!online">
-            <i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i>
-            <span>Offline</span>
+            <!--END CARD4 OUTAGE_HOURS-->
+            <!--CARD5 DEFECT_REDUCTION-->
+            <div class="card">
+                <div class="card-header badge-danger">
+                    Defect Reduction
+                </div>
+                <div class="card-block">
+                    <div>
+                        <canvas id="Canvas-Defect"></canvas>
+                    </div>
+                    <div class="card-footer">
+                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.Defect_Status.Current/data.Defect_Status.Goal)| number:0}}%</span></div>
+                        <div>CURRENT: &nbsp;<span class="bold">{{data.Defect_Status.Current}}</span></div>
+                        <div>GOAL: &nbsp;<span class="bold">{{data.Defect_Status.Goal}}</span></div>
+                    </div>
+                </div>
+            </div>
+            <!--END CARD5 DEFECT_REDUCTION-->
+            <!--CARD6 CHICAGO_SPORTS_WINS-->
+            <div class="card">
+                <div class="card-header badge-danger">
+                    Chicago Sports Wins
+                </div>
+                <div class="card-block">
+                    <div>
+                        <canvas id="Canvas-ChicagoSports"></canvas>
+                    </div>
+                    <div class="card-footer">
+                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.ChicagoSports_Status.Current/data.ChicagoSports_Status.Goal)| number:0}}%</span></div>
+                        <div>CURRENT: &nbsp;<span class="bold">{{data.ChicagoSports_Status.Current}}</span></div>
+                        <div>GOAL: &nbsp;<span class="bold">{{data.ChicagoSports_Status.Goal}}</span></div>
+                    </div>
+                </div>
+            </div>
+            <!--END CARD6 CHICAGO_SPORTS_WINS-->
         </div>
     </div>
+    <!--END CARD ROW2-->
+
 </body>
 
