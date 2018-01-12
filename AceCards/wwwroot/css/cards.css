@@ -1,14 +1,4 @@
-﻿#minVal, #minVal2, #minVal3, #minVal4, #minVal5, #minVal6 {
-    display: none;
-    position: fixed;
-    left: 18%;
-    color: white;
-}
-
-#maxVal, #maxVal2, #maxVal3, #maxVal4, #maxVal5, #maxVal6, #preview-textfield {
-    display: none;
-}
-
+﻿
 div.card {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }

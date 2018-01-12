@@ -1,6 +1,7 @@
 ﻿body {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    background-color: #f4f3ef;
 }
 
 /* Wrapping element */
@@ -19,6 +20,11 @@
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
     width: 100%;
+}
+
+/* Bold span tags*/
+span.bold {
+    font-weight: bold;
 }
 
 /* QR code generator */
