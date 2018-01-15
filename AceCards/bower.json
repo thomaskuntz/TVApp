@@ -12,7 +12,7 @@
     "angular": "v1.6.9-build.5530+sha.07d84dd",
     "firebase": "v4.6.1",
     "angularfire": "v2.3.0",
-    "angular-route": "v1.6.8"
+    "angular-route": "v1.6.9-build.5530+sha.07d84dd"
   },
   "resolutions": {
     "bootstrap": "v4.0.0-beta.3",
@@ -20,6 +20,7 @@
     "jquery-validation": "1.17.0",
     "gauge.js": "v1.3.5",
     "firebase": "v4.6.1",
-    "angular": "v1.6.9-build.5530+sha.07d84dd"
+    "angular": "v1.6.9-build.5530+sha.07d84dd",
+    "angular-route": "v1.6.9-build.5530+sha.07d84dd"
   }
 }
