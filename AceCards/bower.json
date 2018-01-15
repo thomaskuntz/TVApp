@@ -10,7 +10,7 @@
     "gauge.js": "v1.3.5",
     "font-awesome": "Font-Awesome#v4.7.0",
     "angular": "v1.6.9-build.5530+sha.07d84dd",
-    "firebase": "v4.6.1",
+    "firebase": "v4.8.2",
     "angularfire": "v2.3.0",
     "angular-route": "v1.6.9-build.5530+sha.07d84dd"
   },
@@ -19,7 +19,7 @@
     "jquery": "3.2.1",
     "jquery-validation": "1.17.0",
     "gauge.js": "v1.3.5",
-    "firebase": "v4.6.1",
+    "firebase": "v4.8.2",
     "angular": "v1.6.9-build.5530+sha.07d84dd",
     "angular-route": "v1.6.9-build.5530+sha.07d84dd"
   }
