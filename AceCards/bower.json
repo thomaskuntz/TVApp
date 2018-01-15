@@ -9,7 +9,7 @@
     "popper.js": "v1.12.6",
     "gauge.js": "v1.3.2",
     "font-awesome": "Font-Awesome#v4.7.0",
-    "angular": "v1.6.8",
+    "angular": "v1.6.9-build.5530+sha.07d84dd",
     "firebase": "v4.6.1",
     "angularfire": "v2.3.0",
     "angular-route": "v1.6.8"
@@ -20,6 +20,6 @@
     "jquery-validation": "1.17.0",
     "gauge.js": "v1.3.4",
     "firebase": "v4.6.1",
-    "angular": "v1.6.8"
+    "angular": "v1.6.9-build.5530+sha.07d84dd"
   }
 }
