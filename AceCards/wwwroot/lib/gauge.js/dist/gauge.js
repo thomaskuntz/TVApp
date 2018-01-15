@@ -51,20 +51,6 @@
     }
   })();
 
-  String.prototype.hashCode = function() {
-    var char, hash, i, j, ref;
-    hash = 0;
-    if (this.length === 0) {
-      return hash;
-    }
-    for (i = j = 0, ref = this.length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
-      char = this.charCodeAt(i);
-      hash = ((hash << 5) - hash) + char;
-      hash = hash & hash;
-    }
-    return hash;
-  };
-
   secondsToString = function(sec) {
     var hr, min;
     hr = Math.floor(sec / 3600);
@@ -176,6 +162,8 @@
 
     BaseGauge.prototype.displayScale = 1;
 
+    BaseGauge.prototype.forceUpdate = true;
+
     BaseGauge.prototype.setTextField = function(textField, fractionDigits) {
       return this.textField = textField instanceof TextRenderer ? textField : new TextRenderer(textField, fractionDigits);
     };
@@ -234,6 +222,15 @@
         this.canvas.G__height = height;
       }
       return this;
+    };
+
+    BaseGauge.prototype.parseValue = function(value) {
+      value = parseFloat(value) || Number(value);
+      if (isFinite(value)) {
+        return value;
+      } else {
+        return 0;
+      }
     };
 
     return BaseGauge;
@@ -310,8 +307,13 @@
     GaugePointer.prototype.options = {
       strokeWidth: 0.035,
       length: 0.1,
-      color: "#000000"
+      color: "#000000",
+      iconPath: null,
+      iconScale: 1.0,
+      iconAngle: 0
     };
+
+    GaugePointer.prototype.img = null;
 
     function GaugePointer(gauge1) {
       this.gauge = gauge1;
@@ -331,11 +333,15 @@
       this.maxValue = this.gauge.maxValue;
       this.minValue = this.gauge.minValue;
       this.animationSpeed = this.gauge.animationSpeed;
-      return this.options.angle = this.gauge.options.angle;
+      this.options.angle = this.gauge.options.angle;
+      if (this.options.iconPath) {
+        this.img = new Image();
+        return this.img.src = this.options.iconPath;
+      }
     };
 
     GaugePointer.prototype.render = function() {
-      var angle, endX, endY, startX, startY, x, y;
+      var angle, endX, endY, imgX, imgY, startX, startY, x, y;
       angle = this.gauge.getAngle.call(this, this.displayedValue);
       x = Math.round(this.length * Math.cos(angle));
       y = Math.round(this.length * Math.sin(angle));
@@ -351,7 +357,16 @@
       this.ctx.moveTo(startX, startY);
       this.ctx.lineTo(x, y);
       this.ctx.lineTo(endX, endY);
-      return this.ctx.fill();
+      this.ctx.fill();
+      if (this.img) {
+        imgX = Math.round(this.img.width * this.options.iconScale);
+        imgY = Math.round(this.img.height * this.options.iconScale);
+        this.ctx.save();
+        this.ctx.translate(x, y);
+        this.ctx.rotate(angle + Math.PI / 180.0 * (90 + this.options.iconAngle));
+        this.ctx.drawImage(this.img, -imgX / 2, -imgY / 2, imgX, imgY);
+        return this.ctx.restore();
+      }
     };
 
     return GaugePointer;
@@ -422,7 +437,8 @@
       strokeColor: "#e0e0e0",
       pointer: {
         length: 0.8,
-        strokeWidth: 0.035
+        strokeWidth: 0.035,
+        iconScale: 1.0
       },
       angle: 0.15,
       lineWidth: 0.44,
@@ -437,7 +453,6 @@
       this.canvas = canvas;
       Gauge.__super__.constructor.call(this);
       this.percentColors = null;
-      this.forceUpdate = true;
       if (typeof G_vmlCanvasManager !== 'undefined') {
         this.canvas = window.G_vmlCanvasManager.initElement(this.canvas);
       }
@@ -500,12 +515,15 @@
     };
 
     Gauge.prototype.set = function(value) {
-      var gp, i, j, k, len, ref, val;
+      var gp, i, j, k, l, len, ref, ref1, val;
       if (!(value instanceof Array)) {
         value = [value];
       }
+      for (i = j = 0, ref = value.length - 1; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
+        value[i] = this.parseValue(value[i]);
+      }
       if (value.length > this.gp.length) {
-        for (i = j = 0, ref = value.length - this.gp.length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
+        for (i = k = 0, ref1 = value.length - this.gp.length; 0 <= ref1 ? k < ref1 : k > ref1; i = 0 <= ref1 ? ++k : --k) {
           gp = new GaugePointer(this);
           gp.setOptions(this.options.pointer);
           this.gp.push(gp);
@@ -514,8 +532,8 @@
         this.gp = this.gp.slice(this.gp.length - value.length);
       }
       i = 0;
-      for (k = 0, len = value.length; k < len; k++) {
-        val = value[k];
+      for (l = 0, len = value.length; l < len; l++) {
+        val = value[l];
         if (val > this.maxValue) {
           if (this.options.limitMax) {
             val = this.maxValue;
@@ -726,11 +744,22 @@
     };
 
     BaseDonut.prototype.set = function(value) {
-      this.value = value;
+      this.value = this.parseValue(value);
       if (this.value > this.maxValue) {
-        this.maxValue = this.value * 1.1;
+        if (this.options.limitMax) {
+          this.value = this.maxValue;
+        } else {
+          this.maxValue = this.value;
+        }
+      } else if (this.value < this.minValue) {
+        if (this.options.limitMin) {
+          this.value = this.minValue;
+        } else {
+          this.minValue = this.value;
+        }
       }
-      return AnimationUpdater.run();
+      AnimationUpdater.run(this.forceUpdate);
+      return this.forceUpdate = false;
     };
 
     BaseDonut.prototype.render = function() {
@@ -858,3 +887,5 @@
   }
 
 }).call(this);
+
+//# sourceMappingURL=gauge.js.map

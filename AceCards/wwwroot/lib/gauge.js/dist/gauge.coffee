@@ -37,16 +37,6 @@ do () ->
 		window.cancelAnimationFrame = (id) ->
 			isCancelled[id] = true
 
-String.prototype.hashCode = () ->
-	hash = 0
-	if this.length == 0
-		return hash
-	for i in [0...this.length]
-		char = this.charCodeAt(i)
-		hash = ((hash << 5) - hash) + char
-		hash = hash & hash # Convert to 32bit integer
-	return hash
-
 secondsToString = (sec) ->
 	hr = Math.floor(sec / 3600)
 	min = Math.floor((sec - (hr * 3600))/60)
@@ -111,6 +101,7 @@ class ValueUpdater
 
 class BaseGauge extends ValueUpdater
 	displayScale: 1
+	forceUpdate: true
 
 	setTextField: (textField, fractionDigits) ->
 		@textField = if textField instanceof TextRenderer then textField else new TextRenderer(textField, fractionDigits)
@@ -158,6 +149,10 @@ class BaseGauge extends ValueUpdater
 
 		return @
 
+	parseValue: (value) ->
+		value =  parseFloat(value) || Number(value)
+		return if isFinite(value) then value else 0
+
 class TextRenderer
 	constructor: (@el, @fractionDigits) ->
 
@@ -197,6 +192,10 @@ class GaugePointer extends ValueUpdater
 		strokeWidth: 0.035
 		length: 0.1
 		color: "#000000"
+		iconPath: null
+		iconScale: 1.0
+		iconAngle: 0
+	img: null
 
 	constructor: (@gauge) ->
 		@ctx = @gauge.ctx
@@ -212,6 +211,9 @@ class GaugePointer extends ValueUpdater
 		@minValue = @gauge.minValue
 		@animationSpeed =  @gauge.animationSpeed
 		@options.angle = @gauge.options.angle
+		if @options.iconPath
+			@img = new Image()
+			@img.src = @options.iconPath
 
 	render: () ->
 		angle = @gauge.getAngle.call(@, @displayedValue)
@@ -236,6 +238,16 @@ class GaugePointer extends ValueUpdater
 		@ctx.lineTo(x, y)
 		@ctx.lineTo(endX, endY)
 		@ctx.fill()
+
+		if @img
+			imgX = Math.round(@img.width * @options.iconScale)
+			imgY = Math.round(@img.height * @options.iconScale)
+			@ctx.save()
+			@ctx.translate(x, y)
+			@ctx.rotate(angle + Math.PI/180.0*(90 + @options.iconAngle))
+			@ctx.drawImage(@img, -imgX/2, -imgY/2, imgX, imgY)
+			@ctx.restore()
+
 
 class Bar
 	constructor: (@elem) ->
@@ -277,6 +289,7 @@ class Gauge extends BaseGauge
 		pointer:
 			length: 0.8
 			strokeWidth: 0.035
+			iconScale: 1.0
 		angle: 0.15
 		lineWidth: 0.44
 		radiusScale: 1.0
@@ -287,7 +300,6 @@ class Gauge extends BaseGauge
 	constructor: (@canvas) ->
 		super()
 		@percentColors = null
-		@forceUpdate = true
 		if typeof G_vmlCanvasManager != 'undefined'
 			@canvas = window.G_vmlCanvasManager.initElement(@canvas)
 		@ctx = @canvas.getContext('2d')
@@ -330,6 +342,10 @@ class Gauge extends BaseGauge
 	set: (value) ->
 		if not (value instanceof Array)
 			value = [value]
+		# Ensure values are OK
+		for i in [0..(value.length-1)]
+			value[i] = @parseValue(value[i])
+
 		# check if we have enough GaugePointers initialized
 		# lazy initialization
 		if value.length > @gp.length
@@ -466,12 +482,12 @@ class Gauge extends BaseGauge
 			else
 				fillStyle = @options.colorStart
 			@ctx.strokeStyle = fillStyle
-		
+
 			@ctx.beginPath()
 			@ctx.arc(w, h, radius, (1 + @options.angle) * Math.PI, displayedAngle, false)
 			@ctx.lineWidth = @lineWidth
 			@ctx.stroke()
-	
+
 			@ctx.strokeStyle = @options.strokeColor
 			@ctx.beginPath()
 			@ctx.arc(w, h, radius, displayedAngle, (2 - @options.angle) * Math.PI, false)
@@ -519,10 +535,20 @@ class BaseDonut extends BaseGauge
 		return @
 
 	set: (value) ->
-		@value = value
+		@value = @parseValue(value)
 		if @value > @maxValue
-			@maxValue = @value * 1.1
-		AnimationUpdater.run()
+			if @options.limitMax
+				@value = @maxValue
+			else
+				@maxValue = @value
+		else if @value < @minValue
+			if @options.limitMin
+				@value = @minValue
+			else
+				@minValue = @value
+
+		AnimationUpdater.run(@forceUpdate)
+		@forceUpdate = false
 
 	render: () ->
 		displayedAngle = @getAngle(@displayedValue)
