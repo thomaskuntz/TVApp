@@ -6,7 +6,7 @@
     "jquery": "3.2.1",
     "jquery-validation": "1.17.0",
     "jquery-validation-unobtrusive": "3.2.6",
-    "popper.js": "v1.12.6",
+    "popper.js": "v1.13.0-next",
     "gauge.js": "v1.3.5",
     "font-awesome": "Font-Awesome#v4.7.0",
     "angular": "v1.6.9-build.5530+sha.07d84dd",
@@ -21,6 +21,7 @@
     "gauge.js": "v1.3.5",
     "firebase": "v4.8.2",
     "angular": "v1.6.9-build.5530+sha.07d84dd",
-    "angular-route": "v1.6.9-build.5530+sha.07d84dd"
+    "angular-route": "v1.6.9-build.5530+sha.07d84dd",
+    "popper.js": "v1.13.0-next"
   }
 }
