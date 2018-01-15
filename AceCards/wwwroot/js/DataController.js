@@ -154,7 +154,7 @@
                     gaugeChicagoSports.set($scope.data.ChicagoSports_Status.Current);
                 }
             });
-        }, 1000);
+        }, 3000);
     }]);
 
 
