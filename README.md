@@ -1,4 +1,4 @@
-# Desktop-App [![Build Status](https://travis-ci.org/vallchri10/TVApp.svg?branch=master)](https://travis-ci.org/vallchri10/TVApp)
+# TV-App [![Build Status](https://travis-ci.org/vallchri10/TVApp.svg?branch=master)](https://travis-ci.org/vallchri10/TVApp)
 
 ## Table of Contents
 - [About](#about)
@@ -18,7 +18,7 @@ Each card will represent a category that contains information. Front face of eac
 ~ To Be Added Soon ~
 
 ## Supported Browsers:
-Materialize is compatible with:
+TV-App is compatible with:
 
 - Chrome 35+
 
