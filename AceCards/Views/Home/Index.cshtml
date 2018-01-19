@@ -1,120 +1,297 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<body ng-app="appRoute">
+
+<body>
     <div class="container-fluid" ng-controller="DataController">
         <!--START CARD ROW1-->
         <div class="card-deck">
             <!--CARD1 Budget-->
-            <div class="card">
-                <div class="card-header badge-danger">
-                    Budget
-                </div>
-                <div class="card-block">
-                    <div>
-                        <canvas id="Canvas-Budget"></canvas>
+            <div class="card effect_flip">
+                <div class="card_front">
+                    <div class="card-header badge-danger">
+                        Budget
                     </div>
-                    <div class="card-footer">
-                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.Budget_Status.Current/data.Budget_Status.Goal)| number:0}}%</span></div>
-                        <div>CURRENT: &nbsp;<span class="bold">{{data.Budget_Status.Current | currency:"$":0}}</span></div>
-                        <div>GOAL: &nbsp;<span class="bold">{{data.Budget_Status.Goal | currency:"$":0}}</span></div>
+                    <div class="card-block">
+                        <div>
+                            <canvas id="Canvas-Budget"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*data.Budget_Status.Current/data.Budget_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{data.Budget_Status.Current | currency:"$":0}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{data.Budget_Status.Goal | currency:"$":0}}</span></div>
+                        </div>
                     </div>
                 </div>
+                <!-- CARD1 Details-->
+                <div class="card_back">
+                    <div class="card-header badge-danger">
+                        Budget Details
+                    </div>
+                    <div class="card-block">
+                        <i>Budget Goal - Be Favorable to Operating Budget</i>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Q1</th>
+                                    <th scope="col">Q2</th>
+                                    <th scope="col">Q3</th>
+                                    <th scope="col">Q4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>86</td>
+                                    <td>23</td>
+                                    <td>87</td>
+                                    <td>34</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--END CARD! Details-->
             </div>
-
             <!--END CARD1 Budget -->
             <!--CARD2 PROJECTS_CLOSED-->
-            <div class="card">
-                <div class="card-header badge-danger">
-                    Projects Closed
-                </div>
-                <div class="card-block">
-                    <canvas id="Canvas-Projects"></canvas>
-                </div>
-                <div class="card-footer">
-                    <div>STATUS: &nbsp;<span class="bold">{{(100*data.Projects_Status.Current/data.Projects_Status.Goal)| number:0}}%</span></div>
-                    <div>CURRENT: &nbsp;<span class="bold">{{data.Projects_Status.Current}}</span></div>
-                    <div>GOAL: &nbsp;<span class="bold">{{data.Projects_Status.Goal}}</span></div>
-                </div>
-            </div>
-
-            <!--END CARD2 PROJECTS CLOSED-->
-            <!--CARD3 EFFICIENCY_HOURS_SAVED-->
-            <div class="card">
-                <div class="card-header badge-danger">
-                    Efficiency-Hours Saved
-                </div>
-                <div class="card-block">
-                    <div>
-                        <canvas id="Canvas-Efficiency"></canvas>
+            <div class="card effect_flip">
+                <div class="card_front">
+                    <div class="card-header badge-danger">
+                        Projects Closed
+                    </div>
+                    <div class="card-block">
+                        <canvas id="Canvas-Projects"></canvas>
                     </div>
                     <div class="card-footer">
-                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.Efficiency_Status.Current/data.Efficiency_Status.Goal)| number:0}}%</span></div>
-                        <div>CURRENT: &nbsp;<span class="bold">{{data.Efficiency_Status.Current}}</span></div>
-                        <div>GOAL: &nbsp;<span class="bold">{{data.Efficiency_Status.Goal}}</span></div>
+                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.Projects_Status.Current/data.Projects_Status.Goal)| number:0}}%</span></div>
+                        <div>CURRENT: &nbsp;<span class="bold">{{data.Projects_Status.Current}}</span></div>
+                        <div>GOAL: &nbsp;<span class="bold">{{data.Projects_Status.Goal}}</span></div>
                     </div>
                 </div>
+                <!--CARD1 Details-->
+                <div class="card_back">
+                    <div class="card-header badge-danger">
+                        Project Details
+                    </div>
+                    <div class="card-block">
+                        <i>Project Completion Goal - Complete Projects per Plan</i>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Q1</th>
+                                    <th scope="col">Q2</th>
+                                    <th scope="col">Q3</th>
+                                    <th scope="col">Q4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>86</td>
+                                    <td>23</td>
+                                    <td>87</td>
+                                    <td>34</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--END CARD1 DETAILS-->
             </div>
-
-            <!--END CARD3 EFFICIENCY_HOURS_SAVED-->
-            <!--END CARD1 ROW-->
+            <!--END CARD2 PROJECTS CLOSED-->
+            <!--CARD3 EFFICIENCY_HOURS_SAVED-->
+            <div class="card effect_flip">
+                <div class="card_front">
+                    <div class="card-header badge-danger">
+                        Efficiency-Hours Saved
+                    </div>
+                    <div class="card-block">
+                        <div>
+                            <canvas id="Canvas-Efficiency"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*data.Efficiency_Status.Current/data.Efficiency_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{data.Efficiency_Status.Current}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{data.Efficiency_Status.Goal}}</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!--CARD3 Details-->
+                <div class="card_back">
+                    <div class="card-header badge-danger">
+                        Efficiency Details
+                    </div>
+                    <div class="card-block">
+                        <i>Efficiency Goal - Reduce # of person hours in meeting</i>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Q1</th>
+                                    <th scope="col">Q2</th>
+                                    <th scope="col">Q3</th>
+                                    <th scope="col">Q4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>86</td>
+                                    <td>23</td>
+                                    <td>87</td>
+                                    <td>34</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--END CARD3 DETAILS-->
+                </div>
+                <!--END CARD3 EFFICIENCY_HOURS_SAVED-->
+            </div>
+            <!--END CARD ROW-->
         </div>
         <!--START CARD ROW2-->
         <div class="card-deck mt-3">
             <!--CARD4 OUTAGE_HOURS-->
-            <div class="card">
-                <div class="card-header badge-danger">
-                    Outage Hours
+            <div class="card effect_flip">
+                <div class="card_front">
+                    <div class="card-header badge-danger">
+                        Outage Hours
+                    </div>
+                    <div class="card-block">
+                        <div>
+                            <canvas id="Canvas-Outage"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*data.Outage_Status.Current/data.Outage_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{data.Outage_Status.Current}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{data.Outage_Status.Goal}}</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-block">
-                    <div>
-                        <canvas id="Canvas-Outage"></canvas>
+                <!--CARD3 Details-->
+                <div class="card_back">
+                    <div class="card-header badge-danger">
+                        Outage Details
                     </div>
-                    <div class="card-footer">
-                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.Outage_Status.Current/data.Outage_Status.Goal)| number:0}}%</span></div>
-                        <div>CURRENT: &nbsp;<span class="bold">{{data.Outage_Status.Current}}</span></div>
-                        <div>GOAL: &nbsp;<span class="bold">{{data.Outage_Status.Goal}}</span></div>
+                    <div class="card-block">
+                        <i>Efficiency Goal - Reduce # of person hours in meeting</i>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Q1</th>
+                                    <th scope="col">Q2</th>
+                                    <th scope="col">Q3</th>
+                                    <th scope="col">Q4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>86</td>
+                                    <td>23</td>
+                                    <td>87</td>
+                                    <td>34</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    <!--END CARD3 DETAILS-->
                 </div>
             </div>
             <!--END CARD4 OUTAGE_HOURS-->
             <!--CARD5 DEFECT_REDUCTION-->
-            <div class="card">
-                <div class="card-header badge-danger">
-                    Defect Reduction
+            <div class="card effect_flip">
+                <div class="card_front">
+                    <div class="card-header badge-danger">
+                        Defect Reduction
+                    </div>
+                    <div class="card-block">
+                        <div>
+                            <canvas id="Canvas-Defect"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*data.Defect_Status.Current/data.Defect_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{data.Defect_Status.Current}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{data.Defect_Status.Goal}}</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-block">
-                    <div>
-                        <canvas id="Canvas-Defect"></canvas>
+                <!--CARD3 Details-->
+                <div class="card_back">
+                    <div class="card-header badge-danger">
+                        Defect Details
                     </div>
-                    <div class="card-footer">
-                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.Defect_Status.Current/data.Defect_Status.Goal)| number:0}}%</span></div>
-                        <div>CURRENT: &nbsp;<span class="bold">{{data.Defect_Status.Current}}</span></div>
-                        <div>GOAL: &nbsp;<span class="bold">{{data.Defect_Status.Goal}}</span></div>
+                    <div class="card-block">
+                        <i>Defect Goal - Net Reduction of Open Defects</i>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Q1</th>
+                                    <th scope="col">Q2</th>
+                                    <th scope="col">Q3</th>
+                                    <th scope="col">Q4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>86</td>
+                                    <td>23</td>
+                                    <td>87</td>
+                                    <td>34</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    <!--END CARD3 DETAILS-->
                 </div>
             </div>
             <!--END CARD5 DEFECT_REDUCTION-->
             <!--CARD6 CHICAGO_SPORTS_WINS-->
-            <div class="card">
-                <div class="card-header badge-danger">
-                    Chicago Sports Wins
-                </div>
-                <div class="card-block">
-                    <div>
-                        <canvas id="Canvas-ChicagoSports"></canvas>
+            <div class="card effect_flip">
+                <div class="card_front">
+                    <div class="card-header badge-danger">
+                        Chicago Sports Wins
                     </div>
-                    <div class="card-footer">
-                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.ChicagoSports_Status.Current/data.ChicagoSports_Status.Goal)| number:0}}%</span></div>
-                        <div>CURRENT: &nbsp;<span class="bold">{{data.ChicagoSports_Status.Current}}</span></div>
-                        <div>GOAL: &nbsp;<span class="bold">{{data.ChicagoSports_Status.Goal}}</span></div>
+                    <div class="card-block">
+                        <div>
+                            <canvas id="Canvas-ChicagoSports"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*data.ChicagoSports_Status.Current/data.ChicagoSports_Status.Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{data.ChicagoSports_Status.Current}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{data.ChicagoSports_Status.Goal}}</span></div>
+                        </div>
                     </div>
                 </div>
+                <!--CARD3 Details-->
+                <div class="card_back">
+                    <div class="card-header badge-danger">
+                        Sport Details
+                    </div>
+                    <div class="card-block">
+                        <i>Fun Goal - Win certain # of Chicago sport team games!</i>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Q1</th>
+                                    <th scope="col">Q2</th>
+                                    <th scope="col">Q3</th>
+                                    <th scope="col">Q4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>86</td>
+                                    <td>23</td>
+                                    <td>87</td>
+                                    <td>34</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--END CARD3 DETAILS-->
+                </div>
+                <!--END CARD6 CHICAGO_SPORTS_WINS-->
             </div>
-            <!--END CARD6 CHICAGO_SPORTS_WINS-->
+            <!--END CARD ROW2-->
         </div>
     </div>
-    <!--END CARD ROW2-->
 
 </body>
-

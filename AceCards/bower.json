@@ -12,7 +12,8 @@
     "angular": "v1.6.9-build.5530+sha.07d84dd",
     "firebase": "v4.8.2",
     "angularfire": "v2.3.0",
-    "angular-route": "v1.6.9-build.5530+sha.07d84dd"
+    "angular-route": "v1.6.9-build.5530+sha.07d84dd",
+    "chartist": "v0.11.0"
   },
   "resolutions": {
     "bootstrap": "v4.0.0-beta.3",
