@@ -1,5 +1,7 @@
 # TV-App [![Build Status](https://travis-ci.org/vallchri10/TVApp.svg?branch=master)](https://travis-ci.org/vallchri10/TVApp)
 
+![Screenshot](AceCards.JPG)
+
 ## Table of Contents
 - [About](#about)
 - [Tasks](#tasks)
