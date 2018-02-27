@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "db5788e12b986f6cf49bfc542ffa876cf8b83ff5"
+    "signature": "cd945696cff90a9745d51031f9ca805e22e8725c"
   },
   "compilationOptions": {
     "defines": [
@@ -26,8 +26,7 @@
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0",
-          "popper.js": "1.12.6"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0"
         },
         "runtime": {
           "AceCards.dll": {}
@@ -2505,7 +2504,6 @@
           "lib/netstandard1.3/NuGet.Frameworks.dll": {}
         }
       },
-      "popper.js/1.12.6": {},
       "Remotion.Linq/2.1.1": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -5465,13 +5463,6 @@
       "sha512": "sha512-WCkN68c8q+USG+Ot1MmBDH+9DUo5dk7UB0QDMiwCYhrH7ZoFLKFGGNzJ8C3LTR1DvB1LW9BOxKeznnZznKiCTA==",
       "path": "nuget.frameworks/4.0.0",
       "hashPath": "nuget.frameworks.4.0.0.nupkg.sha512"
-    },
-    "popper.js/1.12.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-a6XtbavQCPUshNuL1gGZsWj4RbKblnro233q4TJ3CvFsOskP9GD2xbjgPeXy2xogss2kVjAY1GTErMltxwH7MA==",
-      "path": "popper.js/1.12.6",
-      "hashPath": "popper.js.1.12.6.nupkg.sha512"
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",

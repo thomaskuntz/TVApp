@@ -2883,9 +2883,6 @@
           "lib/netstandard1.3/NuGet.Frameworks.dll": {}
         }
       },
-      "popper.js/1.12.6": {
-        "type": "package"
-      },
       "Remotion.Linq/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -8010,41 +8007,6 @@
         "nuget.frameworks.nuspec"
       ]
     },
-    "popper.js/1.12.6": {
-      "sha512": "a6XtbavQCPUshNuL1gGZsWj4RbKblnro233q4TJ3CvFsOskP9GD2xbjgPeXy2xogss2kVjAY1GTErMltxwH7MA==",
-      "type": "package",
-      "path": "popper.js/1.12.6",
-      "files": [
-        "content/Scripts/README.md",
-        "content/Scripts/esm/popper-utils.js",
-        "content/Scripts/esm/popper-utils.js.map",
-        "content/Scripts/esm/popper-utils.min.js",
-        "content/Scripts/esm/popper-utils.min.js.map",
-        "content/Scripts/esm/popper.js",
-        "content/Scripts/esm/popper.js.map",
-        "content/Scripts/esm/popper.min.js",
-        "content/Scripts/esm/popper.min.js.map",
-        "content/Scripts/index.d.ts",
-        "content/Scripts/popper-utils.js",
-        "content/Scripts/popper-utils.js.map",
-        "content/Scripts/popper-utils.min.js",
-        "content/Scripts/popper-utils.min.js.map",
-        "content/Scripts/popper.js",
-        "content/Scripts/popper.js.map",
-        "content/Scripts/popper.min.js",
-        "content/Scripts/popper.min.js.map",
-        "content/Scripts/umd/popper-utils.js",
-        "content/Scripts/umd/popper-utils.js.map",
-        "content/Scripts/umd/popper-utils.min.js",
-        "content/Scripts/umd/popper-utils.min.js.map",
-        "content/Scripts/umd/popper.js",
-        "content/Scripts/umd/popper.js.map",
-        "content/Scripts/umd/popper.min.js",
-        "content/Scripts/umd/popper.min.js.map",
-        "popper.js.1.12.6.nupkg.sha512",
-        "popper.js.nuspec"
-      ]
-    },
     "Remotion.Linq/2.1.1": {
       "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
       "type": "package",
@@ -13150,8 +13112,7 @@
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0",
-      "popper.js >= 1.12.6"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0"
     ]
   },
   "packageFolders": {
@@ -13164,11 +13125,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\cvalla\\Desktop\\G\\Desktop-App\\AceCards\\AceCards.csproj",
+      "projectUniqueName": "C:\\Users\\cvalla\\Desktop\\TVApp\\AceCards\\AceCards.csproj",
       "projectName": "AceCards",
-      "projectPath": "C:\\Users\\cvalla\\Desktop\\G\\Desktop-App\\AceCards\\AceCards.csproj",
+      "projectPath": "C:\\Users\\cvalla\\Desktop\\TVApp\\AceCards\\AceCards.csproj",
       "packagesPath": "C:\\Users\\cvalla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cvalla\\Desktop\\G\\Desktop-App\\AceCards\\obj\\",
+      "outputPath": "C:\\Users\\cvalla\\Desktop\\TVApp\\AceCards\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13214,10 +13175,6 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.0.0, )"
-          },
-          "popper.js": {
-            "target": "Package",
-            "version": "[1.12.6, )"
           }
         },
         "imports": [
