@@ -1,0 +1,5 @@
+
+*.ide-wal
+.vs/AceCards/v15/.suo
+*.ide-shm
+*.ide-wal
