@@ -142,7 +142,7 @@
                     gaugeDefect.set($scope.Data.Goal_2.Current_Goal);
                 }
                 else {
-                    gaugeDefect.set($scope.Data.Goal_2.Current_Goal);
+                    gaugeDefect.set($scope.Data.Goal_2.Current_Value);
                 }
             });
             //End Goal_2
