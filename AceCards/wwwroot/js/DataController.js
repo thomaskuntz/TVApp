@@ -4,19 +4,19 @@
         // Initialize Firebase to connect the database.
         //*****************************************************************************
         var config = {
-            apiKey: "AIzaSyDr1MKTlGOEsBRrmjW4DFWX81t-1SiIy1I",
-            authDomain: "chris-project-fd2f7.firebaseapp.com",
-            databaseURL: "https://chris-project-fd2f7.firebaseio.com",
-            projectId: "chris-project-fd2f7",
-            storageBucket: "chris-project-fd2f7.appspot.com",
-            messagingSenderId: "192604718135"
+            apiKey: "AIzaSyD8PIZw0APhS_V4GWcvkudLoLki1wMBPY8",
+            authDomain: "development-cb392.firebaseapp.com",
+            databaseURL: "https://development-cb392.firebaseio.com",
+            projectId: "development-cb392",
+            storageBucket: "development-cb392.appspot.com",
+            messagingSenderId: "1085066223528"
         };
 
         firebase.initializeApp(config);
 
-        var data = firebase.database().ref().child('Angular');
+        var data = firebase.database().ref().child('Goals');
         var syncObject = $firebaseObject(data);
-        syncObject.$bindTo($scope, "data");
+        syncObject.$bindTo($scope, "Data");
 
         //*****************************************************************************
         // Gauge setup
