@@ -17,19 +17,19 @@
                             <canvas id="Canvas-Budget"></canvas>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*data.Budget_Status.Current/data.Budget_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{data.Budget_Status.Current | currency:"$":0}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{data.Budget_Status.Goal | currency:"$":0}}</span></div>
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_1.Current_Value/Data.Goal_1.Current_Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_1.Current_Value | currency:"$":0}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_1.Current_Goal | currency:"$":0}}</span></div>
                         </div>
                     </div>
                 </div>
                 <!-- CARD1 Details-->
                 <div class="card_back">
                     <div class="card-header badge-danger">
-                        Budget Details
+                        {{Data.Goal_1.Title_Label_Details}}
                     </div>
                     <div class="card-block">
-                        <i>Budget Goal - Be Favorable to Operating Budget</i>
+                        <i>{{Data.Goal_1.Goal_Desc_Long}}</i>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -41,10 +41,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>86</td>
-                                    <td>23</td>
-                                    <td>87</td>
-                                    <td>34</td>
+                                    <td>{{Data.Goal_1.Q1_Value}}</td>
+                                    <td>{{Data.Goal_1.Q2_Value}}</td>
+                                    <td>{{Data.Goal_1.Q3_Value}}</td>
+                                    <td>{{Data.Goal_1.Q4_Value}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -63,12 +63,12 @@
                         <canvas id="Canvas-Projects"></canvas>
                     </div>
                     <div class="card-footer">
-                        <div>STATUS: &nbsp;<span class="bold">{{(100*data.Projects_Status.Current/data.Projects_Status.Goal)| number:0}}%</span></div>
-                        <div>CURRENT: &nbsp;<span class="bold">{{data.Projects_Status.Current}}</span></div>
-                        <div>GOAL: &nbsp;<span class="bold">{{data.Projects_Status.Goal}}</span></div>
+                        <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_3.Current_Value/Data.Goal_3.Current_Goal)| number:0}}%</span></div>
+                        <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_3.Current_Value}}</span></div>
+                        <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_3.Current_Goal}}</span></div>
                     </div>
                 </div>
-                <!--CARD1 Details-->
+                <!--CARD2 Details-->
                 <div class="card_back">
                     <div class="card-header badge-danger">
                         Project Details
@@ -86,42 +86,42 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>86</td>
-                                    <td>23</td>
-                                    <td>87</td>
-                                    <td>34</td>
+                                    <td>{{Data.Goal_3.Q1_Value}}</td>
+                                    <td>{{Data.Goal_3.Q2_Value}}</td>
+                                    <td>{{Data.Goal_3.Q3_Value}}</td>
+                                    <td>{{Data.Goal_3.Q4_Value}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <!--END CARD1 DETAILS-->
+                <!--END CARD2 DETAILS-->
             </div>
             <!--END CARD2 PROJECTS CLOSED-->
             <!--CARD3 EFFICIENCY_HOURS_SAVED-->
             <div class="card effect_flip">
                 <div class="card_front">
                     <div class="card-header badge-danger">
-                        Efficiency-Hours Saved
+                        {{Data.Goal_4.Title_Label}}
                     </div>
                     <div class="card-block">
                         <div>
                             <canvas id="Canvas-Efficiency"></canvas>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*data.Efficiency_Status.Current/data.Efficiency_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{data.Efficiency_Status.Current}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{data.Efficiency_Status.Goal}}</span></div>
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_4.Current_Value/Data.Goal_4.Current_Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_4.Current_Value}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_4.Current_Goal}}</span></div>
                         </div>
                     </div>
                 </div>
                 <!--CARD3 Details-->
                 <div class="card_back">
                     <div class="card-header badge-danger">
-                        Efficiency Details
+                        {{Data.Goal_4.Title_Label_Details}}
                     </div>
                     <div class="card-block">
-                        <i>Efficiency Goal - Reduce # of person hours in meeting</i>
+                        <i>{{Data.Goal_4.Goal_Desc_Long}}</i>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -133,10 +133,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>86</td>
-                                    <td>23</td>
-                                    <td>87</td>
-                                    <td>34</td>
+                                    <td>{{Data.Goal_4.Q1_Value}}</td>
+                                    <td>{{Data.Goal_4.Q2_Value}}</td>
+                                    <td>{{Data.Goal_4.Q3_Value}}</td>
+                                    <td>{{Data.Goal_4.Q4_Value}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -153,26 +153,26 @@
             <div class="card effect_flip">
                 <div class="card_front">
                     <div class="card-header badge-danger">
-                        Outage Hours
+                        {{Data.Goal_5.Title_Label}}
                     </div>
                     <div class="card-block">
                         <div>
                             <canvas id="Canvas-Outage"></canvas>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*data.Outage_Status.Current/data.Outage_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{data.Outage_Status.Current}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{data.Outage_Status.Goal}}</span></div>
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_5.Current_Value/Data.Goal_5.Current_Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_5.Current_Goal}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_5.Current_Goal}}</span></div>
                         </div>
                     </div>
                 </div>
                 <!--CARD3 Details-->
                 <div class="card_back">
                     <div class="card-header badge-danger">
-                        Outage Details
+                        {{Data.Goal_5.Title_Label_Details}}
                     </div>
                     <div class="card-block">
-                        <i>Efficiency Goal - Reduce # of person hours in meeting</i>
+                        <i>{{Data.Goal_5.Goal_Desc_Long}}</i>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -184,10 +184,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>86</td>
-                                    <td>23</td>
-                                    <td>87</td>
-                                    <td>34</td>
+                                    <td>{{Data.Goal_5.Q1_Value}}</td>
+                                    <td>{{Data.Goal_5.Q2_Value}}</td>
+                                    <td>{{Data.Goal_5.Q3_Value}}</td>
+                                    <td>{{Data.Goal_5.Q4_Value}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -200,26 +200,26 @@
             <div class="card effect_flip">
                 <div class="card_front">
                     <div class="card-header badge-danger">
-                        Defect Reduction
+                        {{Data.Goal_2.Title_Label}}
                     </div>
                     <div class="card-block">
                         <div>
                             <canvas id="Canvas-Defect"></canvas>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*data.Defect_Status.Current/data.Defect_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{data.Defect_Status.Current}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{data.Defect_Status.Goal}}</span></div>
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_2.Current_Value/Data.Goal_2.Current_Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_2.Current_Value}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_2.Current_Goal}}</span></div>
                         </div>
                     </div>
                 </div>
                 <!--CARD3 Details-->
                 <div class="card_back">
                     <div class="card-header badge-danger">
-                        Defect Details
+                        {{Data.Goal_2.Title_Label_Details}}
                     </div>
                     <div class="card-block">
-                        <i>Defect Goal - Net Reduction of Open Defects</i>
+                        <i>{{Data.Goal_2.Goal_Desc_Long}}</i>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -231,10 +231,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>86</td>
-                                    <td>23</td>
-                                    <td>87</td>
-                                    <td>34</td>
+                                    <td>{{Data.Goal_2.Q1_Value}}</td>
+                                    <td>{{Data.Goal_2.Q2_Value}}</td>
+                                    <td>{{Data.Goal_2.Q3_Value}}</td>
+                                    <td>{{Data.Goal_2.Q4_Value}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -247,26 +247,26 @@
             <div class="card effect_flip">
                 <div class="card_front">
                     <div class="card-header badge-danger">
-                        Chicago Sports Wins
+                        {{Data.Goal_6.Title_Label}}
                     </div>
                     <div class="card-block">
                         <div>
                             <canvas id="Canvas-ChicagoSports"></canvas>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*data.ChicagoSports_Status.Current/data.ChicagoSports_Status.Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{data.ChicagoSports_Status.Current}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{data.ChicagoSports_Status.Goal}}</span></div>
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_6.Current_Value/Data.Goal_6.Current_Goal)| number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_6.Current_Value}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_6.Current_Goal}}</span></div>
                         </div>
                     </div>
                 </div>
                 <!--CARD3 Details-->
                 <div class="card_back">
                     <div class="card-header badge-danger">
-                        Sport Details
+                        {{Data.Goal_6.Title_Label_Details}}
                     </div>
                     <div class="card-block">
-                        <i>Fun Goal - Win certain # of Chicago sport team games!</i>
+                        <i>{{Data.Goal_6.Goal_Desc_Long}}</i>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -278,10 +278,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>86</td>
-                                    <td>23</td>
-                                    <td>87</td>
-                                    <td>34</td>
+                                    <td>{{Data.Goal_6.Q1_Value}}</td>
+                                    <td>{{Data.Goal_6.Q2_Value}}</td>
+                                    <td>{{Data.Goal_6.Q3_Value}}</td>
+                                    <td>{{Data.Goal_6.Q4_Value}}</td>
                                 </tr>
                             </tbody>
                         </table>
