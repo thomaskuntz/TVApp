@@ -47,113 +47,125 @@
 
         $timeout(function () {
 
+            //Begin Firebase Goal_1 
             var canvasBudget = document.getElementById('Canvas-Budget');
             var gauge = new Gauge(canvasBudget).setOptions($scope.gaugeOptions);
-            gauge.maxValue = $scope.data.Budget_Status.Goal;
+            gauge.maxValue = $scope.Data.Goal_1.Current_Goal;
             gauge.animationSpeed = 128; // set animation speed (32 is default value)
-            gauge.set($scope.data.Budget_Status.Current);
+            gauge.set($scope.Data.Goal_1.Current_Goal);
 
-            $scope.$watchCollection('[data.Budget_Status.Current, data.Budget_Status.Goal]', function () {
+            $scope.$watchCollection('[Data.Goal_1.Current_Value, Data.Goal_1.Current_Gaol]', function () {
 
-                gauge.maxValue = $scope.data.Budget_Status.Goal;
+                gauge.maxValue = $scope.Data.Goal_1.Current_Goal;
 
-                if ($scope.data.Budget_Status.Current > $scope.data.Budget_Status.Goal) {
-                    gauge.set($scope.data.Budget_Status.Goal);
+                if ($scope.Data.Goal_1.Current_Value > $scope.Data.Goal_1.Current_Goal) {
+                    gauge.set($scope.Data.Goal_1.Current_Goal);
                 }
                 else {
-                    gauge.set($scope.data.Budget_Status.Current);
+                    gauge.set($scope.Data.Goal_1.Current_Value);
                 }
             });
+            //End Goal_1
 
+            //Begin Firebase Goal_3
             var canvasProjects = document.getElementById('Canvas-Projects');
             var gaugeProjects = new Gauge(canvasProjects).setOptions($scope.gaugeOptions);
-            gaugeProjects.maxValue = $scope.data.Projects_Status.Goal;
+            gaugeProjects.maxValue = $scope.Data.Goal_3.Current_Goal;
             gaugeProjects.animationSpeed = 128; // set animation speed (32 is default value)
-            gaugeProjects.set($scope.data.Projects_Status.Current);
+            gaugeProjects.set($scope.Data.Goal_3.Current_Value);
 
-            $scope.$watchCollection('[data.Projects_Status.Current, data.Projects_Status.Goal]', function () {
+            $scope.$watchCollection('[Data.Goal_3.Current_Value, Data.Goal_3.Current_Goal]', function () {
 
-                gaugeProjects.maxValue = $scope.data.Projects_Status.Goal;
+                gaugeProjects.maxValue = $scope.Data.Goal_3.Current_Goal;
 
-                if ($scope.data.Projects_Status.Current > $scope.data.Projects_Status.Goal) {
-                    gaugeProjects.set($scope.data.Projects_Status.Goal);
+                if ($scope.Data.Goal_3.Current_Value > $scope.Data.Goal_3.Current_Goal) {
+                    gaugeProjects.set($scope.Data.Goal_3.Current_Goal);
                 }
                 else {
-                    gaugeProjects.set($scope.data.Projects_Status.Current);
+                    gaugeProjects.set($scope.Data.Goal_3.Current_Value);
                 }
             });
+            //End Goal_3
 
+            //Begin Firebase Goal_4
             var canvasefficiency = document.getElementById('Canvas-Efficiency');
             var gaugeefficiency = new Gauge(canvasefficiency).setOptions($scope.gaugeOptions);
-            gaugeefficiency.maxValue = $scope.data.Efficiency_Status.Goal;
+            gaugeefficiency.maxValue = $scope.Data.Goal_4.Current_Goal;
             gaugeefficiency.animationSpeed = 128; // set animation speed (32 is default value)
-            gaugeefficiency.set($scope.data.Efficiency_Status.Current);
+            gaugeefficiency.set($scope.Data.Goal_4.Current_Value);
 
-            $scope.$watchCollection('[data.Efficiency_Status.Current, data.Efficiency_Status.Goal]', function () {
+            $scope.$watchCollection('[Data.Goal_4.Current_Value, Data.Goal_4.Current_Goal]', function () {
 
-                gaugeefficiency.maxValue = $scope.data.Efficiency_Status.Goal;
+                gaugeefficiency.maxValue = $scope.Data.Goal_4.Current_Goal;
 
-                if ($scope.data.Efficiency_Status.Current > $scope.data.Efficiency_Status.Goal) {
-                    gaugeefficiency.set($scope.data.Efficiency_Status.Goal);
+                if ($scope.Data.Goal_4.Current_Value > $scope.Data.Goal_4.Current_Goal) {
+                    gaugeefficiency.set($scope.Data.Goal_4.Current_Goal);
                 }
                 else {
-                    gaugeefficiency.set($scope.data.Efficiency_Status.Current);
+                    gaugeefficiency.set($scope.Data.Goal_4.Current_Value);
                 }
             });
+            //End Goal_4
 
+            //Begin Firebase Goal_5
             var canvasOutage = document.getElementById('Canvas-Outage');
             var gaugeOutage = new Gauge(canvasOutage).setOptions($scope.gaugeOptions);
-            gaugeOutage.maxValue = $scope.data.Outage_Status.Goal;
+            gaugeOutage.maxValue = $scope.Data.Goal_5.Current_Goal;
             gaugeOutage.animationSpeed = 128; // set animation speed (32 is default value)
-            gaugeOutage.set($scope.data.Outage_Status.Current);
+            gaugeOutage.set($scope.Data.Goal_5.Current_Value);
 
-            $scope.$watchCollection('[data.Outage_Status.Current, data.Outage_Status.Goal]', function () {
+            $scope.$watchCollection('[Data.Goal_5.Current_Value, Data.Goal_5.Current_Goal]', function () {
 
-                gaugeOutage.maxValue = $scope.data.Outage_Status.Goal;
+                gaugeOutage.maxValue = $scope.Data.Goal_5.Current_Goal;
 
-                if ($scope.data.Outage_Status.Current > $scope.data.Outage_Status.Goal) {
+                if ($scope.Data.Goal_5.Current_Value > $scope.Data.Goal_5.Current_Goal) {
                     gaugeOutage.set($scope.data.Outage_Status.Goal);
                 }
                 else {
-                    gaugeOutage.set($scope.data.Outage_Status.Current);
+                    gaugeOutage.set($scope.Data.Goal_5.Current_Value);
                 }
             });
+            //End Goal_5
 
+            //Begin Firebase Goal_2
             var canvasDefect = document.getElementById('Canvas-Defect');
             var gaugeDefect = new Gauge(canvasDefect).setOptions($scope.gaugeOptions);
-            gaugeDefect.maxValue = $scope.data.Defect_Status.Goal;
+            gaugeDefect.maxValue = $scope.Data.Goal_2.Current_Goal;
             gaugeDefect.animationSpeed = 128; // set animation speed (32 is default value)
-            gaugeDefect.set($scope.data.Defect_Status.Current);
+            gaugeDefect.set($scope.Data.Goal_2.Current_Value);
 
-            $scope.$watchCollection('[data.Defect_Status.Current, data.Defect_Status.Goal]', function () {
+            $scope.$watchCollection('[Data.Goal_2.Current_Value, Data.Goal_2.Current_Goal]', function () {
 
-                gaugeDefect.maxValue = $scope.data.Defect_Status.Goal;
+                gaugeDefect.maxValue = $scope.Data.Goal_2.Current_Goal;
 
-                if ($scope.data.Defect_Status.Current > $scope.data.Defect_Status.Goal) {
-                    gaugeDefect.set($scope.data.Defect_Status.Goal);
+                if ($scope.Data.Goal_2.Current_Value > $scope.Data.Goal_2.Current_Goal) {
+                    gaugeDefect.set($scope.Data.Goal_2.Current_Goal);
                 }
                 else {
-                    gaugeDefect.set($scope.data.Defect_Status.Current);
+                    gaugeDefect.set($scope.Data.Goal_2.Current_Goal);
                 }
             });
+            //End Goal_2
 
+            //Begin Firebase Goal_6
             var canvasChicagoSports = document.getElementById('Canvas-ChicagoSports');
             var gaugeChicagoSports = new Gauge(canvasChicagoSports).setOptions($scope.gaugeOptions);
-            gaugeChicagoSports.maxValue = $scope.data.ChicagoSports_Status.Goal;
+            gaugeChicagoSports.maxValue = $scope.Data.Goal_6.Current_Goal;
             gaugeChicagoSports.animationSpeed = 128; // set animation speed (32 is default value)
-            gaugeChicagoSports.set($scope.data.ChicagoSports_Status.Current);
+            gaugeChicagoSports.set($scope.Data.Goal_6.Current_Value);
 
-            $scope.$watchCollection('[data.ChicagoSports_Status.Current, data.ChicagoSports_Status.Goal]', function () {
+            $scope.$watchCollection('[Data.Goal_6.Current_Value, Data.Goal_6.Current_Goal]', function () {
 
-                gaugeChicagoSports.maxValue = $scope.data.ChicagoSports_Status.Goal;
+                gaugeChicagoSports.maxValue = $scope.Data.Goal_6.Current_Goal;
 
-                if ($scope.data.ChicagoSports_Status.Current > $scope.data.ChicagoSports_Status.Goal) {
-                    gaugeChicagoSports.set($scope.data.ChicagoSports_Status.Goal);
+                if ($scope.Data.Goal_6.Current_Value > $scope.Data.Goal_6.Current_Goal) {
+                    gaugeChicagoSports.set($scope.Data.Goal_6.Current_Goal);
                 }
                 else {
-                    gaugeChicagoSports.set($scope.data.ChicagoSports_Status.Current);
+                    gaugeChicagoSports.set($scope.Data.Goal_6.Current_Value);
                 }
             });
+            //End Goal_6
         }, 3000);
     }]);
 

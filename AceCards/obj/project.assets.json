@@ -13116,7 +13116,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cvalla\\.nuget\\packages\\": {},
+    "C:\\Users\\tkuntz\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13125,18 +13126,20 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\cvalla\\Desktop\\TVApp\\AceCards\\AceCards.csproj",
+      "projectUniqueName": "C:\\Users\\tkuntz\\source\\repos\\TVApp\\AceCards\\AceCards.csproj",
       "projectName": "AceCards",
-      "projectPath": "C:\\Users\\cvalla\\Desktop\\TVApp\\AceCards\\AceCards.csproj",
-      "packagesPath": "C:\\Users\\cvalla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cvalla\\Desktop\\TVApp\\AceCards\\obj\\",
+      "projectPath": "C:\\Users\\tkuntz\\source\\repos\\TVApp\\AceCards\\AceCards.csproj",
+      "packagesPath": "C:\\Users\\tkuntz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tkuntz\\source\\repos\\TVApp\\AceCards\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\cvalla\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\tkuntz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
