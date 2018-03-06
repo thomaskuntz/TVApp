@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AceCards</title>
+
+    <environment include="Development">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/cards.css" />
+        <link rel="stylesheet" href="~/css/cardEffect.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+    </environment>
+
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body ng-app="appRoute">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Ace Hardware</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                @*<li class="nav-item">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area="" asp-controller="Home" asp-action="About" class="nav-link">About</a>
+                    </li>
+                    <li class=”nav-item”>
+                        <a asp-area="" asp-controller="Home" asp-action="Contact" class="nav-link">Contact</a>
+                    </li>*@
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <!--Section for setting online status and Date-->
+        <!--If the user is connected to the internet we will show that the application is online -->
+        <!--Else show that it is offline-->
+        <div align="center" class="col-md-12">
+            <hr />
+            <footer>
+
+                <div>@DateTime.Now.ToLongDateString()</div>
+                <div ng-show="online">
+                    <i class="fa fa-check-circle" style="color:green"></i>
+                    <span>Online</span>
+                </div>
+                <div ng-show="!online">
+                    <i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i>
+                    <span>Offline</span>
+                </div>
+        </footer>
+
+    </div>
+</div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/umd/popper.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+        <!--AngularJS + Gauge HAS to be loaded first-->
+        <script src="~/lib/angular/angular.js"></script>
+        <script src="~/lib/angular-route/angular-route.js"></script>
+        <script src="~/lib/gauge.js/dist/gauge.js"></script>
+
+        <!--Load Firebase and AngularFire-->
+        <script src="~/lib/firebase/firebase.js"></script>
+        <script src="~/lib/angularfire/dist/angularfire.js"></script>
+
+        <script src="~/js/DataController.js"></script>
+        <script src="~/js/cardFlip.js"></script>
+
+    </environment>
+<environment exclude="Development">
+    <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+            crossorigin="anonymous"
+            integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"
+            asp-fallback-src="~/lib/angular/angular.min.js"
+            asp-fallback-test="window.angular">
+    </script>
+</environment>
+
+@RenderSection("Scripts", required: false)
+</body>
+</html>

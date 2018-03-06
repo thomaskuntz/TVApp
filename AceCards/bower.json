@@ -1,0 +1,28 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "v4.0.0",
+    "jquery": "3.3.1",
+    "jquery-validation": "1.17.0",
+    "jquery-validation-unobtrusive": "3.2.6",
+    "popper.js": "v1.13.0-next",
+    "gauge.js": "v1.3.5",
+    "font-awesome": "Font-Awesome#v4.7.0",
+    "angular": "v1.6.9",
+    "firebase": "v4.10.1",
+    "angularfire": "v2.3.0",
+    "angular-route": "v1.6.9",
+    "chartist": "v0.11.0"
+  },
+  "resolutions": {
+    "bootstrap": "v4.0.0",
+    "jquery": "3.3.1",
+    "jquery-validation": "1.17.0",
+    "gauge.js": "v1.3.5",
+    "firebase": "v4.10.1",
+    "angular": "v1.6.9",
+    "angular-route": "v1.6.9",
+    "popper.js": "v1.13.0-next"
+  }
+}
