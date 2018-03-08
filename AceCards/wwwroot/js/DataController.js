@@ -37,8 +37,8 @@
             colorStop: '#8FC0DA',    // just experiment with them
             strokeColor: '#E0E0E0',  // to see which ones work best for you
             generateGradient: true,
-            highDpiSupport: true,     // High resolution support
-        }
+            highDpiSupport: true     // High resolution support
+        };
 
         //*****************************************************************************
         // Give AngularFire time to get the data and then set the gauges in each card.
