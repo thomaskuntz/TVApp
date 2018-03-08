@@ -12,7 +12,6 @@
 
 .card .card_front {
     backface-visibility: hidden;
-    border-radius: 6px;
     height: 100%;
     position: absolute;
     overflow: hidden;
