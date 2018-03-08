@@ -2,7 +2,7 @@
 .card {
     transform-style: preserve-3d;
     transition: all 2s ease-in-out;
-    height: 331px;
+    height: 310px;
     width: 338px;
 }
 
