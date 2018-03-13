@@ -3,13 +3,14 @@
         //*****************************************************************************
         // Initialize Firebase to connect the database.
         //*****************************************************************************
+
         var config = {
-            apiKey: "AIzaSyD8PIZw0APhS_V4GWcvkudLoLki1wMBPY8",
-            authDomain: "development-cb392.firebaseapp.com",
-            databaseURL: "https://development-cb392.firebaseio.com",
-            projectId: "development-cb392",
-            storageBucket: "development-cb392.appspot.com",
-            messagingSenderId: "1085066223528"
+            apiKey: "AIzaSyCWqt7ilAj47sZ0-gsx8hVW7ECp4EmOZS8",
+            authDomain: "development-4e60a.firebaseapp.com",
+            databaseURL: "https://development-4e60a.firebaseio.com",
+            projectId: "development-4e60a",
+            storageBucket: "development-4e60a.appspot.com",
+            messagingSenderId: "837656296346"
         };
 
         firebase.initializeApp(config);
@@ -50,21 +51,34 @@
             //Begin Firebase Goal_1 
             var canvasBudget = document.getElementById('Canvas-Budget');
             var gauge = new Gauge(canvasBudget).setOptions($scope.gaugeOptions);
-            gauge.maxValue = $scope.Data.Goal_1.Current_Goal;
+            gauge.maxValue = 100;
+            gauge.minValue = 0;
             gauge.animationSpeed = 128; // set animation speed (32 is default value)
-            gauge.set($scope.Data.Goal_1.Current_Goal);
+            gauge.set(100);
+            
 
             $scope.$watchCollection('[Data.Goal_1.Current_Value, Data.Goal_1.Current_Gaol]', function () {
+                var budgetValue = $scope.Data.Goal_1.Current_Value;
+                var budgetGoal = $scope.Data.Goal_1.Current_Goal;
+                
+                //Made change to below logic for the budget goal:
+                //When the value is greater than zero, we want the gauge to show 100%
+                //Zero or less, we want the gauge to be 0%
+                //Tom - 03/13/2018
 
-                gauge.maxValue = $scope.Data.Goal_1.Current_Goal;
-
-                if ($scope.Data.Goal_1.Current_Value > $scope.Data.Goal_1.Current_Goal) {
-                    gauge.set($scope.Data.Goal_1.Current_Goal);
+                if (budgetValue > 0) {
+                    gauge.set(gauge.maxValue);
                 }
                 else {
-                    gauge.set($scope.Data.Goal_1.Current_Value);
+                    gauge.set(gauge.minValue);
                 }
+
+                //This will set the "Status" section of the budget card based on if the current value for budget is greater than 0
+                //Tom - 03/13/2018
+                budgetValue > 0 ? document.getElementById('budget-status').innerHTML = 'On Target' : document.getElementById('budget-status').innerHTML = 'Not On Target';
+
             });
+
             //End Goal_1
 
             //Begin Firebase Goal_3
