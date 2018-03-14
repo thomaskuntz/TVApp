@@ -5,7 +5,7 @@
         //*****************************************************************************
 
         //New config information for new developement database
-        //Tom - 03/13/2018
+        //Tom - 03/13/2018.
         var config = {
             apiKey: "AIzaSyCWqt7ilAj47sZ0-gsx8hVW7ECp4EmOZS8",
             authDomain: "development-4e60a.firebaseapp.com",
@@ -59,7 +59,7 @@
             gauge.set(100);
             
 
-            $scope.$watchCollection('[Data.Goal_1.Current_Value, Data.Goal_1.Current_Gaol]', function () {
+            $scope.$watchCollection('[Data.Goal_1.Current_Value, Data.Goal_1.Current_Goal]', function () {
                 var budgetValue = $scope.Data.Goal_1.Current_Value;
                 var budgetGoal = $scope.Data.Goal_1.Current_Goal;
                 
