@@ -1,4 +1,5 @@
-﻿var module = angular.module('appRoute', ['firebase'])
+﻿//TODO: Add all logic to datacontroller so view is receiveing information. 
+var module = angular.module('appRoute', ['firebase'])
     .controller('DataController', ['$scope', '$firebaseObject', '$timeout', function ($scope, $firebaseObject, $timeout) {
         //*****************************************************************************
         // Initialize Firebase to connect the database.
