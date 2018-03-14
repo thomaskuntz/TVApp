@@ -4,6 +4,8 @@
         // Initialize Firebase to connect the database.
         //*****************************************************************************
 
+        //New config information for new developement database
+        //Tom - 03/13/2018
         var config = {
             apiKey: "AIzaSyCWqt7ilAj47sZ0-gsx8hVW7ECp4EmOZS8",
             authDomain: "development-4e60a.firebaseapp.com",
