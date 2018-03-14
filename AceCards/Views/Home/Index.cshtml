@@ -18,7 +18,7 @@
                         <div class="card-footer">
 							<div>STATUS: &nbsp;<span id="budget-status" class="bold"></span></div>
                             <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_1.Current_Value | currency:"$":0}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_1.Current_Goal | currency:"$":0}}</span></div>
+                            <div>GOAL: &nbsp;<span id="budget-goal"class="bold">{{Data.Goal_1.Goal_Desc_Short}}</span></div>
                         </div>
                     </div>
                 </div>
