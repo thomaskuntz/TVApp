@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
 <body>
     <div class="container-fluid" ng-controller="DataController">
         <!--START CARD ROW1-->
@@ -17,9 +16,9 @@
                             <canvas id="Canvas-Budget"></canvas>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_1.Current_Value/Data.Goal_1.Current_Goal)| number:0}}%</span></div>
+							<div>STATUS: &nbsp;<span id="budget-status" class="bold"></span></div>
                             <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_1.Current_Value | currency:"$":0}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_1.Current_Goal | currency:"$":0}}</span></div>
+                            <div>GOAL: &nbsp;<span id="budget-goal"class="bold">{{Data.Goal_1.Goal_Desc_Short}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -161,7 +160,7 @@
                         </div>
                         <div class="card-footer">
                             <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_5.Current_Value/Data.Goal_5.Current_Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_5.Current_Goal}}</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_5.Current_Value}}</span></div>
                             <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_5.Current_Goal}}</span></div>
                         </div>
                     </div>
