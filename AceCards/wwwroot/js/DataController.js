@@ -20,7 +20,7 @@ var module = angular.module('appRoute', ['firebase'])
 
         var data = firebase.database().ref().child('Goals');
         var syncObject = $firebaseObject(data);
-        syncObject.$bindTo($scope, "Data");
+        syncObject.$bindTo($scope, "Data"); 
 
         //*****************************************************************************
         // Gauge setup
@@ -104,6 +104,12 @@ var module = angular.module('appRoute', ['firebase'])
                 //This will set the "Status" section of the budget card based on if the current value for budget is greater than 0
                 //Tom - 03/13/2018
                 budgetValue > 0 ? document.getElementById('budget-status').innerHTML = 'On Target' : document.getElementById('budget-status').innerHTML = 'Not On Target';
+
+                //date = Date.now(); 
+
+                var date = new Date();
+
+                document.getElementById('tStampTest').innerHTML = "Last Updated: " + (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear() + " " + date.getSeconds();
 
             });
 
