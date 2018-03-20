@@ -8,10 +8,12 @@
     <environment include="Development">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-        <link rel="stylesheet" href="~/css/cards.css" />
-        <link rel="stylesheet" href="~/css/cardEffect.css" />
+        <link href="~/css/Site/site.css" rel="stylesheet" />
+        <link href="~/css/Cards/CardDesign.css" rel="stylesheet" />
+        <link href="~/css/Cards/CardEffect.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+        <link href="~/css/NavigationBar/NavigationBar.css" rel="stylesheet" />
+
     </environment>
 
     <environment exclude="Development">
@@ -21,80 +23,72 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body ng-app="appRoute">
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" style="text-align:center" href="#">Ace Hardware</a>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-        <ul class="navbar-nav px-3">
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="#">Sign out</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <i class="fa fa-home" aria-hidden="true"></i>&nbsp; Dashboard
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-television" aria-hidden="true"></i>&nbsp; TV Gauges
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-github" aria-hidden="true"></i>&nbsp; GitHub
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-fire" aria-hidden="true"></i>&nbsp; Firebase
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-cogs" aria-hidden="true"></i>&nbsp; Settings
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Sign Out
-                            </a>
-                        </li>
-                    </ul>
-                    <div align="center" class="col-md-12">
-                        <hr />
-                        <footer>
 
-                            <div>@DateTime.Now.ToLongDateString()</div>
-                            <div ng-show="online">
-                                <i class="fa fa-check-circle" style="color:green"></i>
-                                <span>Online</span>
-                            </div>
-                            <div ng-show="!online">
-                                <i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i>
-                                <span>Offline</span>
-                            </div>
-                        </footer>
+<body ng-app="DataModule">
+    <div class="wrapper">
+        <div class="sidebar" data-color="orange">
+            <!--
+                Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+            -->
+            <div class="logo" style="text-align:center">
+                <a href="#" class="simple-text logo-normal">
+                    Ace Hardware
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-home" style="color:#a9afbb" aria-hidden="true"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa fa-television" aria-hidden="true"></i> TV Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-github" style="color:#a9afbb" aria-hidden="true"></i> GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-fire" style="color:#a9afbb" aria-hidden="true"></i> Firebase
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-sign-out" style="color:#a9afbb" aria-hidden="true"></i>Sign Out
+                        </a>
+                    </li>
+                    <li class="active-pro">
 
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            @RenderBody()
+            <!--Section for setting online status and Date-->
+            <!--If the user is connected to the internet we will show that the application is online -->
+            <!--Else show that it is offline-->
+            <div align="center" class="col-md-12">
+                <hr />
+                <footer>
+                    <div>@DateTime.Now.ToLongDateString()</div>
+                    <div ng-show="online">
+                        <i class="fa fa-check-circle" style="color:green"></i>
+                        <span>Online</span>
                     </div>
-                </div>
-            </nav>
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-                @RenderBody()
-                <!--Section for setting online status and Date-->
-                <!--If the user is connected to the internet we will show that the application is online -->
-                <!--Else show that it is offline-->
-
-            </main>
+                    <div ng-show="!online">
+                        <i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i>
+                        <span>Offline</span>
+                    </div>
+                </footer>
+            </div>
         </div>
     </div>
-
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/umd/popper.js"></script>
@@ -102,16 +96,14 @@
 
         <!--AngularJS + Gauge HAS to be loaded first-->
         <script src="~/lib/angular/angular.js"></script>
-        <script src="~/lib/angular-route/angular-route.js"></script>
         <script src="~/lib/gauge.js/dist/gauge.js"></script>
 
         <!--Load Firebase and AngularFire-->
         <script src="~/lib/firebase/firebase.js"></script>
         <script src="~/lib/angularfire/dist/angularfire.js"></script>
 
-        <script src="~/js/DataController.js"></script>
-        <script src="~/js/cardFlip.js"></script>
-
+        <script src="~/js/TVdata/DataController.js"></script>
+        <script src="~/js/CardFlipEffect/CardFlip.js"></script>
     </environment>
     <environment exclude="Development">
         <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -133,5 +125,6 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
+
 </body>
 </html>

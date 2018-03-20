@@ -1,0 +1,170 @@
+﻿.wrapper {
+    position: relative;
+    top: 0;
+    height: 100vh;
+}
+ ul li a:hover {
+    background-color: ghostwhite;
+}
+ .off-canvas-sidebar, .sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    bottom: 0;
+    width: 260px;
+    left: 0;
+    z-index: 1030;
+}
+ .off-canvas-sidebar:after, .off-canvas-sidebar:before, .sidebar:after, .sidebar:before {
+    display: block;
+    content: "";
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+ .off-canvas-sidebar .logo, .sidebar .logo {
+    position: relative;
+    padding: .5rem .7rem;
+    z-index: 4;
+}
+ .off-canvas-sidebar .logo a.logo-mini, .sidebar .logo a.logo-mini {
+    opacity: 1;
+    float: left;
+    width: 34px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 12px;
+}
+ .animation-transition-general, .nav-pills .nav-link, .nav-tabs .nav-link, .navbar, .navbar-collapse .navbar-nav .nav-link, .off-canvas-sidebar .logo a.logo-mini, .off-canvas-sidebar .logo a.logo-normal, .off-canvas-sidebar .navbar-minimize, .off-canvas-sidebar .nav p, .sidebar .logo a.logo-mini, .sidebar .logo a.logo-normal, .sidebar .nav a, .sidebar .nav a i, .sidebar .navbar-minimize, .sidebar .nav p, .tag, .tag [data-role=remove] {
+    transition: all .3s ease 0s;
+}
+ .off-canvas-sidebar .logo .simple-text, .sidebar .logo .simple-text {
+    text-transform: uppercase;
+    padding: .5rem 0;
+    display: block;
+    white-space: nowrap;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 30px;
+    overflow: hidden;
+}
+ a, a:focus, a:hover {
+    color: #f96332;
+}
+ .off-canvas-sidebar .logo a.logo-normal, .sidebar .logo a.logo-normal {
+    display: block;
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+ .off-canvas-sidebar .logo:after, .sidebar .logo:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    height: 2px;
+    width: calc(100% - 30px);
+    background-color: rgba(180, 180, 180, 0.3);
+}
+ .off-canvas-sidebar .sidebar-wrapper, .sidebar .sidebar-wrapper {
+    position: relative;
+    height: calc(100vh - 75px);
+    overflow: auto;
+    width: 260px;
+    z-index: 4;
+    padding-bottom: 100px;
+}
+ .off-canvas-sidebar[data-color=orange]:after, .sidebar[data-color=orange]:after {
+    background: #eeeeee;
+}
+ .off-canvas-sidebar:after, .sidebar:after {
+    background: #888;
+    background: linear-gradient(#888,#000 80%);
+    z-index: 3;
+}
+ .main-panel {
+    position: relative;
+    float: right;
+    width: calc(100% - 260px);
+    transition: all .5s cubic-bezier(.685,.0473,.346,1);
+}
+ .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+ a, a:focus, a:hover {
+    color: #f96332;
+}
+ .off-canvas-sidebar[data-color=orange] .nav li.active > a, .off-canvas-sidebar[data-color=orange] .nav li.active > a i, .sidebar[data-color=orange] .nav li.active > a, .sidebar[data-color=orange] .nav li.active > a i {
+    color: #000;
+}
+ .off-canvas-sidebar .nav li.active > a, .sidebar .nav li.active > a {
+    background-color: #ffffff;
+    box-shadow: 0 1px 15px 1px rgba(39,39,39,.1);
+}
+ .off-canvas-sidebar .nav li:first-child > a, .sidebar .nav li:first-child > a {
+    margin: 0 15px;
+}
+ .off-canvas-sidebar .nav li > a, .sidebar .nav li > a {
+    margin: 10px 15px 0;
+    border-radius: 5px;
+    color: #3C4858;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 8px;
+    line-height: 1.625rem;
+}
+ off-canvas-sidebar .nav, .sidebar .nav {
+    margin-top: 20px;
+    display: block;
+}
+ [role=button], a, area, button, input, label, select, summary, textarea {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+ .now-ui-icons {
+    display: inline-block;
+    font: normal normal normal 14px/1 Nucleo Outline;
+    font-size: inherit;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+ .off-canvas-sidebar .nav i, .sidebar .nav i {
+    font-size: 20px;
+    float: left;
+    margin-right: 12px;
+    line-height: 24px;
+    width: 34px;
+    text-align: center;
+    color: hsla(0,0%,100%,.5);
+    position: relative;
+}
+ @media (min-width: 992px) {
+    .sidebar .nav > li.active-pro {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+}
+}
+ @media (min-width: 991px) {
+    .sidebar {
+    display: block;
+    box-shadow: 0 2px 22px 0 rgba(0,0,0,.2), 0 2px 30px 0 rgba(0,0,0,.35);
+}
+}
