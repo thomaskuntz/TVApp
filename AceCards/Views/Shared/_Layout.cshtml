@@ -11,7 +11,6 @@
         <link href="~/css/Site/site.css" rel="stylesheet" />
         <link href="~/css/Cards/CardDesign.css" rel="stylesheet" />
         <link href="~/css/Cards/CardEffect.css" rel="stylesheet" />
-        <link href="~/css/NavigationBar.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
         <link href="~/css/NavigationBar/NavigationBar.css" rel="stylesheet" />
 
@@ -25,7 +24,7 @@
     </environment>
 </head>
 
-<body>
+<body ng-app="DataModule">
     <div class="wrapper">
         <div class="sidebar" data-color="orange">
             <!--
@@ -97,7 +96,6 @@
 
         <!--AngularJS + Gauge HAS to be loaded first-->
         <script src="~/lib/angular/angular.js"></script>
-        <script src="~/lib/angular-route/angular-route.js"></script>
         <script src="~/lib/gauge.js/dist/gauge.js"></script>
 
         <!--Load Firebase and AngularFire-->
@@ -105,7 +103,7 @@
         <script src="~/lib/angularfire/dist/angularfire.js"></script>
 
         <script src="~/js/TVdata/DataController.js"></script>
-        <script src="~/js/CardFlipEffect/cardFlip.js"></script>
+        <script src="~/js/CardFlipEffect/CardFlip.js"></script>
     </environment>
     <environment exclude="Development">
         <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js"
