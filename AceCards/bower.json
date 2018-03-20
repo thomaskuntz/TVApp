@@ -12,7 +12,6 @@
     "angular": "v1.6.9",
     "firebase": "v4.10.1",
     "angularfire": "v2.3.0",
-    "angular-route": "v1.6.9",
     "chartist": "v0.11.0"
   },
   "resolutions": {
